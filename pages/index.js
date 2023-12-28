@@ -9,6 +9,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <a
+        href={`https://github.com/login/oauth/authorize?scope=user:email&client_id=${process.env.NEXT_PUBLIC_GITHUB_OAUTH_ID}`}
+        className={buttonStyle.button}
+      >
+        Sign in with GitHub
+      </a>
+
       <main>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
