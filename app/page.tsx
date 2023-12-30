@@ -1,4 +1,4 @@
-import LoginOptions from './login';
+import LoginOptions from "./login";
 
 export default async function IndexPage() {
   return (
