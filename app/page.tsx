@@ -1,6 +1,3 @@
-import { Card, Title, Text } from '@tremor/react';
-import Search from './search';
-import UsersTable from './table';
 import LoginOptions from './login';
 
 export default async function IndexPage() {
