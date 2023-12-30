@@ -7,11 +7,6 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { signIn, signOut } from 'next-auth/react';
 import Image from 'next/image';
 
-const navigation = [
-  { name: 'Dashboard', href: '/' },
-  { name: 'Playground', href: '/playground' }
-];
-
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
 }
@@ -88,6 +83,12 @@ function loggedInUser(user: any) {
 
 export default function Navbar({ user }: { user: any }) {
   const pathname = usePathname();
+
+  let navigation = [{ name: 'Dashboard', href: '/' }];
+
+  if (user) {
+    navigation.push({ name: 'Playground', href: '/statistikk' });
+  }
 
   return (
     <Disclosure as="nav" className="bg-white shadow-sm">
