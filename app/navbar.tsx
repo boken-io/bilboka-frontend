@@ -72,14 +72,23 @@ export default function Navbar({ user }: { user: any }) {
                 <Menu as="div" className="relative ml-3">
                   <div>
                     <Menu.Button className="flex rounded-full bg-white text-sm focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2">
-                      <span className="sr-only">Open user menu</span>
-                      <Image
-                        className="h-8 w-8 rounded-full"
-                        src={user?.image || 'https://avatar.vercel.sh/leerob'}
-                        height={32}
-                        width={32}
-                        alt={`${user?.name || 'placeholder'} avatar`}
-                      />
+                      <div className="grid grid-flow-col auto-cols-max gap-4">
+                        <div className="place-self-center place-self-end">
+                          {user?.name}
+                        </div>
+                        <div className="place-self-end">
+                          <span className="sr-only">Open user menu</span>
+                          <Image
+                            className="h-8 w-8 rounded-full"
+                            src={
+                              user?.image || 'https://avatar.vercel.sh/leerob'
+                            }
+                            height={32}
+                            width={32}
+                            alt={`${user?.name || 'placeholder'} avatar`}
+                          />
+                        </div>
+                      </div>
                     </Menu.Button>
                   </div>
                   <Transition
