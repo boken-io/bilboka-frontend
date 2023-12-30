@@ -1,5 +1,6 @@
 import NextAuth from 'next-auth';
 import GitHub from 'next-auth/providers/github';
+import AppleProvider from 'next-auth/providers/apple';
 
 export const {
   handlers: { GET, POST },
@@ -7,8 +8,12 @@ export const {
 } = NextAuth({
   providers: [
     GitHub({
-      clientId: process.env.OAUTH_CLIENT_KEY as string,
-      clientSecret: process.env.OAUTH_CLIENT_SECRET as string
+      clientId: process.env.GITHUB_ID as string,
+      clientSecret: process.env.GITHUB_SECRET as string
+    }),
+    AppleProvider({
+      clientId: process.env.APPLE_ID as string,
+      clientSecret: process.env.APPLE_SECRET as string
     })
   ],
   pages: {
