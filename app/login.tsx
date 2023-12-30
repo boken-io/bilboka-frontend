@@ -34,6 +34,15 @@ export default function LoginOptions() {
         />
         <Image
           className="rounded-full cursor-pointer"
+          onClick={() => signIn('google')}
+          src="/google.webp"
+          height={64}
+          width={64}
+          alt="Google Login"
+          style={imageStyle}
+        />
+        <Image
+          className="rounded-full cursor-pointer"
           onClick={() => signIn('github')}
           src="/github.webp"
           height={64}
