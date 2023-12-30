@@ -2,9 +2,6 @@ import { Card, Title, Text } from '@tremor/react';
 import Search from './search';
 import UsersTable from './table';
 
-import prisma from '../lib/prisma'
-
-
 interface User {
   id: number;
   name: string;
@@ -17,10 +14,7 @@ export default async function IndexPage({
 }: {
   searchParams: { q: string };
 }) {
-  const search = searchParams.q ?? '';
-  const result = await prisma.users.findMany()
-
-  const users = result as User[];
+  const users = [] as User[];
 
   return (
     <main className="p-4 md:p-10 mx-auto max-w-7xl">
