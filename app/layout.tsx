@@ -21,7 +21,7 @@ export default function RootLayout({
         <Suspense>
           <Nav />
         </Suspense>
-        <Toaster position="bottom-center " />
+        <Toaster position="bottom-center" />
         {children}
         <Toast />
       </body>
