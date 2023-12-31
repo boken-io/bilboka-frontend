@@ -4,20 +4,6 @@ import { Card } from '@tremor/react';
 import { FormEvent } from 'react';
 
 export default function Page() {
-  async function onSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-
-    const formData = new FormData(event.currentTarget);
-    const response = await fetch('/api/submit', {
-      method: 'POST',
-      body: formData
-    });
-
-    // Handle response if necessary
-    const data = await response.json();
-    // ...
-  }
-
   return (
     <main className="p-4 md:p-10 mx-auto max-w-7xl">
       <Card>
