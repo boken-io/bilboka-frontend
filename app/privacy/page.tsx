@@ -1,7 +1,7 @@
 import { Card } from '@tremor/react';
 
 export default function Page() {
-  const url = process.env.NEXTAUTH_URL;
+  const url = process.env.AUTH_URL;
   return (
     <main className="p-4 md:p-10 mx-auto max-w-5xl">
       <Card className="px-12">
