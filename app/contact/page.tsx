@@ -2,6 +2,7 @@
 
 import { Card } from '@tremor/react';
 import { FormEvent } from 'react';
+import { toast } from 'react-hot-toast';
 
 export default function Page() {
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
@@ -13,19 +14,16 @@ export default function Page() {
       body: formData
     });
 
-    // Handle response if necessary
-    const data = await response.json();
-    // ...
+    const data = await response;
+    toast.success('Message sent.');
   }
 
   return (
-    <main className="p-4 md:p-10 mx-auto max-w-7xl">
-      <div className="w-full ">
-        <form
-          className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
-          onSubmit={onSubmit}
-        >
-          <div className="grid gap-6 justify-items-center">
+    <main className="p-4 md:p-10 mx-auto max-w-5xl">
+      <Card className="px-12">
+        <h1 className="flow text-5xl font-extrabold mb-5">Contact</h1>
+        <form onSubmit={onSubmit}>
+          <div className="grid gap-6">
             <div className="">
               <label
                 className="block text-gray-700 text-sm font-bold mb-2"
@@ -61,7 +59,7 @@ export default function Page() {
             </button>
           </div>
         </form>
-      </div>
+      </Card>
     </main>
   );
 }
