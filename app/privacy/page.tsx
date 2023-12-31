@@ -42,15 +42,16 @@ export default function Page() {
             <p>
               <strong>Affiliate</strong> means an entity that controls, is
               controlled by or is under common control with a party, where
-              "control" means ownership of 50% or more of the shares, equity
-              interest or other securities entitled to vote for election of
-              directors or other managing authority.
+              &lsquo;control&lsquo; means ownership of 50% or more of the
+              shares, equity interest or other securities entitled to vote for
+              election of directors or other managing authority.
             </p>
           </li>
           <li>
             <p>
-              <strong>Company</strong> (referred to as either "the Company",
-              "We", "Us" or "Our" in this Agreement) refers to Bilboken.
+              <strong>Company</strong> (referred to as either &lsquo;the
+              Company&lsquo;, &lsquo;We&lsquo;, &lsquo;Us&lsquo; or
+              &lsquo;Our&lsquo; in this Agreement) refers to Bilboken.
             </p>
           </li>
           <li>
@@ -152,7 +153,7 @@ export default function Page() {
           Usage Data is collected automatically when using the Service.
         </p>
         <p className="my-4">
-          Usage Data may include information such as Your Device's Internet
+          Usage Data may include information such as Your Device&apos;s Internet
           Protocol address (e.g. IP address), browser type, browser version, the
           pages of our Service that You visit, the time and date of Your visit,
           the time spent on those pages, unique device identifiers and other
@@ -202,10 +203,10 @@ export default function Page() {
           </li>
         </ul>
         <p className="my-4">
-          Cookies can be "Persistent" or "Session" Cookies. Persistent Cookies
-          remain on Your personal computer or mobile device when You go offline,
-          while Session Cookies are deleted as soon as You close Your web
-          browser. Learn more about cookies on the{' '}
+          Cookies can be &lsquo;Persistent&lsquo; or &lsquo;Session&lsquo;
+          Cookies. Persistent Cookies remain on Your personal computer or mobile
+          device when You go offline, while Session Cookies are deleted as soon
+          as You close Your web browser. Learn more about cookies on the{' '}
           <a
             className="underline"
             href="https://www.freeprivacypolicy.com/blog/sample-privacy-policy-template/#Use_Of_Cookies_And_Tracking"
@@ -303,11 +304,11 @@ export default function Page() {
             <p>
               <strong>To contact You:</strong> To contact You by email,
               telephone calls, SMS, or other equivalent forms of electronic
-              communication, such as a mobile application's push notifications
-              regarding updates or informative communications related to the
-              functionalities, products or contracted services, including the
-              security updates, when necessary or reasonable for their
-              implementation.
+              communication, such as a mobile application&apos;s push
+              notifications regarding updates or informative communications
+              related to the functionalities, products or contracted services,
+              including the security updates, when necessary or reasonable for
+              their implementation.
             </p>
           </li>
           <li>
@@ -407,12 +408,12 @@ export default function Page() {
         <h3 className="text-3xl mt-4">Transfer of Your Personal Data</h3>
         <p className="my-4">
           Your information, including Personal Data, is processed at the
-          Company's operating offices and in any other places where the parties
-          involved in the processing are located. It means that this information
-          may be transferred to — and maintained on — computers located outside
-          of Your state, province, country or other governmental jurisdiction
-          where the data protection laws may differ than those from Your
-          jurisdiction.
+          Company&apos;s operating offices and in any other places where the
+          parties involved in the processing are located. It means that this
+          information may be transferred to — and maintained on — computers
+          located outside of Your state, province, country or other governmental
+          jurisdiction where the data protection laws may differ than those from
+          Your jurisdiction.
         </p>
         <p className="my-4">
           Your consent to this Privacy Policy followed by Your submission of
@@ -487,7 +488,7 @@ export default function Page() {
           acceptable means to protect Your Personal Data, We cannot guarantee
           its absolute security.
         </p>
-        <h2 className="text-4xl mt-6">Children's Privacy</h2>
+        <h2 className="text-4xl mt-6">Children&apos;s Privacy</h2>
         <p className="my-4">
           Our Service does not address anyone under the age of 13. We do not
           knowingly collect personally identifiable information from anyone
@@ -500,15 +501,15 @@ export default function Page() {
         <p className="my-4">
           If We need to rely on consent as a legal basis for processing Your
           information and Your country requires consent from a parent, We may
-          require Your parent's consent before We collect and use that
+          require Your parent&apos;s consent before We collect and use that
           information.
         </p>
         <h2 className="text-4xl mt-6">Links to Other Websites</h2>
         <p className="my-4">
           Our Service may contain links to other websites that are not operated
           by Us. If You click on a third party link, You will be directed to
-          that third party's site. We strongly advise You to review the Privacy
-          Policy of every site You visit.
+          that third party&apos;s site. We strongly advise You to review the
+          Privacy Policy of every site You visit.
         </p>
         <p className="my-4">
           We have no control over and assume no responsibility for the content,
@@ -521,8 +522,8 @@ export default function Page() {
         </p>
         <p className="my-4">
           We will let You know via email and/or a prominent notice on Our
-          Service, prior to the change becoming effective and update the "Last
-          updated" date at the top of this Privacy Policy.
+          Service, prior to the change becoming effective and update the
+          &lsquo;Last updated&lsquo; date at the top of this Privacy Policy.
         </p>
         <p className="my-4">
           You are advised to review this Privacy Policy periodically for any
