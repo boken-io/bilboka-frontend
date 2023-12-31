@@ -8,6 +8,10 @@ import Image from 'next/image';
 const imageStyle = {
   // TODO: add hover effect
 };
+const disabled = {
+  cursor: 'not-allowed',
+  opacity: '0.3'
+};
 
 export default function LoginOptions() {
   return (
@@ -21,7 +25,7 @@ export default function LoginOptions() {
           height={64}
           width={64}
           alt="Apple Login"
-          style={imageStyle}
+          style={disabled}
         />
         <Image
           className="rounded-full cursor-pointer"
@@ -39,7 +43,7 @@ export default function LoginOptions() {
           height={64}
           width={64}
           alt="Google Login"
-          style={imageStyle}
+          style={disabled}
         />
         <Image
           className="rounded-full cursor-pointer"
