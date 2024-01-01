@@ -1,10 +1,15 @@
 import { Card } from '@tremor/react';
 import { auth } from '../auth';
 import FetchVehicles from './fetch';
+import { redirect } from 'next/navigation';
 
 export default async function Page() {
   const url = process.env.AUTH_URL;
   const session = await auth();
+
+  if (!session) {
+    redirect('/');
+  }
 
   const vehicles = await FetchVehicles();
 
