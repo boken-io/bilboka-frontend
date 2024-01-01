@@ -1,5 +1,5 @@
 import { Card } from '@tremor/react';
-import { auth } from '../auth';
+import { auth } from '../api/auth/[...nextauth]/route';
 import FetchVehicles from './fetch';
 
 export default async function Page() {
