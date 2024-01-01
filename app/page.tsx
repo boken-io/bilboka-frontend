@@ -1,4 +1,3 @@
-import LoadingSpinner from './_components/loading-spinner/loading-spinner';
 import LoginOptions from './_components/login/login';
 
 export default async function IndexPage() {
