@@ -33,11 +33,6 @@ export default async function Page() {
               <Metric>{vehicle.tankVolume}</Metric>
               <Text>{vehicle.odometerUnit}</Text>
             </Flex>
-            <Flex
-              justifyContent="center"
-              alignItems="baseline"
-              className="space-x-2"
-            ></Flex>
           </a>
         ))}
       </Grid>
