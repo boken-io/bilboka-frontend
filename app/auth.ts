@@ -13,7 +13,6 @@ export const {
     AppleProvider,
     GoogleProvider,
     FacebookProvider({
-      idToken: true,
       clientId: process.env.AUTH_FACEBOOK_ID,
       clientSecret: process.env.AUTH_FACEBOOK_SECRET,
       authorization: {
@@ -26,7 +25,10 @@ export const {
       },
       token: {
         url: 'https://graph.facebook.com/oauth/access_token',
-        async request(context) {
+        async request(context: {
+          params: { code: any };
+          provider: { clientId: any; callbackUrl: any; clientSecret: any };
+        }) {
           const url =
             `https://graph.facebook.com/oauth/access_token` +
             `?code=${context.params.code}` +
