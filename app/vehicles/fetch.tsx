@@ -17,3 +17,14 @@ export async function FetchVehicles() {
     return err;
   }
 }
+
+export async function FetchVehicle(vehicleId: string) {
+  try {
+    const res = await fetch(
+      `${process.env.BILBOKEN_API_URL}/vehicles/${vehicleId}/sample`
+    );
+    return await res.json();
+  } catch (err) {
+    return err;
+  }
+}
