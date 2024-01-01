@@ -9,7 +9,7 @@ export interface Vehicle {
   tankVolume: number;
 }
 
-export default async function FetchVehicles() {
+export async function FetchVehicles() {
   try {
     const res = await fetch(`${process.env.BILBOKEN_API_URL}/vehicles/sample`);
     return await res.json();
