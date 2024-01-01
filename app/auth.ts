@@ -6,8 +6,10 @@ import FacebookProvider from 'next-auth/providers/facebook';
 
 export const {
   handlers: { GET, POST },
-  auth,
-  signIn
+  auth
 } = NextAuth({
-  providers: [GitHub, AppleProvider, GoogleProvider, FacebookProvider]
+  providers: [GitHub, AppleProvider, GoogleProvider, FacebookProvider],
+  pages: {
+    signIn: '/sign-in'
+  }
 });
