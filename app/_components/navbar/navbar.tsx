@@ -87,7 +87,7 @@ export default function Navbar({ user }: { user: any }) {
   let navigation = [{ name: 'Dashboard', href: '/' }];
 
   if (user) {
-    navigation.push({ name: 'Playground', href: '/statistikk' });
+    navigation.push({ name: 'Biler', href: '/vehicles' });
   }
 
   return (
