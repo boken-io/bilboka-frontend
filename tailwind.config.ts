@@ -1,5 +1,5 @@
 import type { Config } from 'tailwindcss';
-
+// TODO impement darkmode
 export default {
   content: [
     './app/**/*.{js,ts,jsx,tsx,mdx}',
