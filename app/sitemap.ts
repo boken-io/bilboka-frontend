@@ -5,25 +5,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${process.env.AUTH_URL}`,
       lastModified: new Date(),
-      changeFrequency: 'yearly',
+      changeFrequency: 'weekly',
       priority: 1
     },
     {
       url: `${process.env.AUTH_URL}/delete`,
       lastModified: new Date(),
-      changeFrequency: 'yearly',
+      changeFrequency: 'weekly',
       priority: 0.5
     },
     {
       url: `${process.env.AUTH_URL}/contact`,
       lastModified: new Date(),
-      changeFrequency: 'yearly',
+      changeFrequency: 'weekly',
       priority: 0.5
     },
     {
       url: `${process.env.AUTH_URL}/privacy`,
       lastModified: new Date(),
-      changeFrequency: 'yearly',
+      changeFrequency: 'weekly',
       priority: 0.7
     }
   ];
