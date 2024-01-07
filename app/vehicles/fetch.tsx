@@ -1,20 +1,13 @@
-export type Vehicles = Vehicle[];
+import { Vehicles, Vehicle } from './[vehicle]/model';
+import toast from 'react-hot-toast';
 
-export interface Vehicle {
-  id: string;
-  name: string;
-  tegnkombinasjon: string;
-  odometerUnit: string;
-  fuelType: string;
-  tankVolume: number;
-}
-
-export async function FetchVehicles() {
+export async function FetchVehicles(): Promise<Vehicles> {
   try {
     const res = await fetch(`${process.env.BILBOKEN_API_URL}/vehicles/sample`);
-    return await res.json();
-  } catch (err) {
-    return err;
+    return (await res.json()) as Vehicles;
+  } catch (err: any) {
+    toast.error(err);
+    return [];
   }
 }
 
@@ -24,7 +17,8 @@ export async function FetchVehicle(vehicleId: string) {
       `${process.env.BILBOKEN_API_URL}/vehicles/${vehicleId}/sample`
     );
     return await res.json();
-  } catch (err) {
-    return err;
+  } catch (err: any) {
+    toast.error(err);
+    return [];
   }
 }

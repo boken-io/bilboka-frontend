@@ -1,5 +1,6 @@
 import { Card, Metric, Text, Title, BarList, Flex, Grid } from '@tremor/react';
-import { FetchVehicles, Vehicles } from './fetch';
+import { FetchVehicles } from './fetch';
+import { Vehicles } from './[vehicle]/model';
 import CheckIfAuthenticated from '../_components/check-auth';
 import { redirect } from 'next/navigation';
 
