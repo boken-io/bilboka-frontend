@@ -21,7 +21,7 @@ export default function LoginOptions() {
         <Image
           className="rounded-full cursor-pointer"
           onClick={() => signIn('apple')}
-          src="/apple.webp"
+          src="/auth/apple.webp"
           height={64}
           width={64}
           alt="Apple Login"
@@ -30,7 +30,7 @@ export default function LoginOptions() {
         <Image
           className="rounded-full cursor-pointer"
           onClick={() => signIn('facebook')}
-          src="/facebook.webp"
+          src="/auth/facebook.webp"
           height={64}
           width={64}
           alt="Facebook Login"
@@ -39,7 +39,7 @@ export default function LoginOptions() {
         <Image
           className="rounded-full cursor-pointer"
           onClick={() => signIn('google')}
-          src="/google.webp"
+          src="/auth/google.webp"
           height={64}
           width={64}
           alt="Google Login"
@@ -48,7 +48,7 @@ export default function LoginOptions() {
         <Image
           className="rounded-full cursor-pointer"
           onClick={() => signIn('github')}
-          src="/github.webp"
+          src="/auth/github.webp"
           height={64}
           width={64}
           alt="GitHub Login"
