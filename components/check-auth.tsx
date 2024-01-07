@@ -1,4 +1,4 @@
-import { auth } from '../auth';
+import { auth } from '../app/auth';
 import { RedirectType, redirect } from 'next/navigation';
 
 export default async function CheckIfAuthenticated() {

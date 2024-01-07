@@ -1,5 +1,5 @@
 import { Card, Metric, Text, Title, BarList, Flex, Grid } from '@tremor/react';
-import CheckIfAuthenticated from '../../_components/check-auth';
+import CheckIfAuthenticated from '../../../components/check-auth';
 import { FetchVehicle, Vehicle } from '../fetch';
 
 export default function Info({ vehicle }: { vehicle: Vehicle }) {
