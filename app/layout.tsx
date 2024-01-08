@@ -1,6 +1,6 @@
 import './globals.css';
 
-import Nav from '../components/navbar/nav';
+import Nav from './_components/navbar/nav';
 import Toast from '../components/toast/toast';
 import { Suspense } from 'react';
 import { Toaster } from 'react-hot-toast';
