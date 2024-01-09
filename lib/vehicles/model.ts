@@ -1,6 +1,8 @@
-export type { Vehicles, Vehicle, Entry, Datapoint };
+export type { Vehicle, Vehicles, Entry, Entries, Datapoint, Datapoints };
 
 type Vehicles = Vehicle[];
+type Entries = Entry[];
+type Datapoints = Datapoint[];
 
 interface Vehicle {
   id: string;

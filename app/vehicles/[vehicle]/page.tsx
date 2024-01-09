@@ -1,4 +1,3 @@
-import { Card, Metric, Text, Title, BarList, Flex, Grid } from '@tremor/react';
 import CheckIfAuthenticated from '@/lib/auth/check-auth';
 import { Get, Resource } from '@/lib/vehicles/callout';
 import Link from 'next/link';
@@ -7,6 +6,7 @@ import { RegisterFuel } from '@/components/vehicles/register-fuel';
 import { Vehicle } from '@/lib/vehicles/model';
 import Info from '@/components/vehicles/info';
 import Chart from '@/components/vehicles/chart';
+import Entries from '@/components/vehicles/entries';
 
 export default async function Page({
   params,
@@ -27,8 +27,10 @@ export default async function Page({
         <div className="col-span-2">
           <Chart></Chart>
         </div>
+        <Entries vehicleId={params.vehicle}></Entries>
       </div>
 
+      {/* TODO separate component */}
       <Link
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full fixed bottom-4 right-4"
         href="?modal=true"

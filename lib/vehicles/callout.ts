@@ -1,4 +1,3 @@
-import { Vehicles } from './model';
 import { notFound } from 'next/navigation';
 
 export { Get, Resource };
@@ -11,7 +10,7 @@ enum Resource {
 
 async function Get(resource: Resource, vehicleId?: string): Promise<any> {
   const response = await doCallout(resource, vehicleId);
-  return (await response.json()) as Vehicles;
+  return await response.json();
 }
 
 async function doCallout(resource: Resource, vehicleId?: string) {
@@ -57,11 +56,11 @@ function GetPath(resource: Resource, vehicleId?: string): string {
       return vehicleId
         ? `vehicles/${vehicleId}/${UseSample()}`
         : `vehicles/${UseSample()}`;
-    case (Resource.Entries, Resource.Datapoints):
+    case Resource.Entries:
       if (!vehicleId) {
         throw new Error('Vehicle ID is missing');
       }
-      return `vehicles/${vehicleId}/${resource}/${UseSample()}`;
+      return `vehicles/${vehicleId}/entries/${UseSample()}`;
     default:
       throw new Error('Invalid resource');
   }
