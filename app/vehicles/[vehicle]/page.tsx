@@ -4,7 +4,7 @@ import { Get, Resource } from '@/lib/vehicles/callout';
 import Link from 'next/link';
 import { RegisterFuel } from '@/components/vehicles/register-fuel';
 
-import { Vehicle } from '../../../lib/vehicles/model';
+import { Vehicle } from '@/lib/vehicles/model';
 import Info from '@/components/vehicles/info';
 import Chart from '@/components/vehicles/chart';
 

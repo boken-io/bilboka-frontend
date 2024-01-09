@@ -1,11 +1,11 @@
 import '@/styles/globals.css';
 
-import Nav from '../components/navbar/nav';
-import Toast from '../components/toast/toast';
+import Nav from '@/components/navbar/nav';
+import Toast from '@/components/toast/toast';
 import { Suspense } from 'react';
 import { Toaster } from 'react-hot-toast';
 
-import { ThemeProvider } from '../components/themes/theme-provider';
+import { ThemeProvider } from '@/components/themes/theme-provider';
 import { ThemeToggle } from '@/components/themes/theme-toggle';
 
 export const metadata = {
