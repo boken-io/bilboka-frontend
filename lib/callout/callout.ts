@@ -48,7 +48,7 @@ function GetDomain(): string {
 }
 
 function UseSample(): string {
-  return process.env.USE_SAMPLE ? 'sample' : '';
+  return process.env.USE_SAMPLE == 'true' ? 'sample' : '';
 }
 
 function GetPath(resource: Resource, vehicleId?: string): string {
