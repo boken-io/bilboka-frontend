@@ -1,5 +1,6 @@
 import { Card, Metric, Text, Title, BarList, Flex, Grid } from '@tremor/react';
 import { Vehicles } from './[vehicle]/model';
+import Image from 'next/image';
 import { Get, Resource } from '@/lib/callout/callout';
 import CheckIfAuthenticated from '@/lib/auth/check-auth';
 import { redirect } from 'next/navigation';
@@ -11,32 +12,36 @@ export default async function Page() {
 
   return (
     <main className="p-4 md:p-10 mx-auto max-w-7xl">
-      <Grid numItemsSm={2} numItemsLg={3} className="gap-6">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         {vehicles.map((vehicle) => (
           <a
             key={vehicle.tegnkombinasjon}
             href={`/vehicles/${vehicle.id}`}
-            className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 "
+            className="block max-w-sm p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-800 rounded-lg shadow-md hover:bg-gray-100 dark:hover:bg-gray-900"
           >
-            <Title>{vehicle.tegnkombinasjon}</Title>
-            <Flex
-              justifyContent="start"
-              alignItems="baseline"
-              className="space-x-2"
-            >
-              <Metric>{vehicle.name}</Metric>
-            </Flex>
-            <Flex
-              justifyContent="end"
-              alignItems="baseline"
-              className="space-x-2"
-            >
-              <Metric>{vehicle.tankVolume}</Metric>
-              <Text>{vehicle.odometerUnit}</Text>
-            </Flex>
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <Text>{vehicle.tegnkombinasjon}</Text>
+                <Metric>{vehicle.name}</Metric>
+              </div>
+              <div className="grow justify-self-end">
+                <div>
+                  <Image
+                    src={`/vehicles/volvo/${vehicle.id}.webp`}
+                    width="100"
+                    height="100"
+                    alt="Vehicle"
+                  />
+                </div>
+              </div>
+              <div className="justify-self-start">
+                <Metric>{vehicle.tankVolume}</Metric>
+                <Text>{vehicle.odometerUnit}</Text>
+              </div>
+            </div>
           </a>
         ))}
-      </Grid>
+      </div>
     </main>
   );
 }
