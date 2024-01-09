@@ -21,6 +21,7 @@ export const DarkModeToggle = () => {
       <input
         type="checkbox"
         value=""
+        checked={theme === 'dark'}
         className="sr-only peer"
         onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
       />

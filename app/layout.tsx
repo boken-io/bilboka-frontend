@@ -5,8 +5,8 @@ import Toast from './_components/toast/toast';
 import { Suspense } from 'react';
 import { Toaster } from 'react-hot-toast';
 
-import { ThemeProvider } from './theme-provider';
-import { DarkModeToggle } from '@/components/DarkModeToggle';
+import { ThemeProvider } from '../components/themes/theme-provider';
+import { DarkModeToggle } from '@/components/themes/DarkModeToggle';
 
 export const metadata = {
   title: 'Bilboken',
