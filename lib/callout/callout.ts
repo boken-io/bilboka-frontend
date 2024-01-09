@@ -52,16 +52,15 @@ function UseSample(): string {
 }
 
 function GetPath(resource: Resource, vehicleId?: string): string {
-  if (resource !== Resource.Vehicles && !vehicleId) {
-    throw new Error('Vehicle ID is missing');
-  }
-
   switch (resource) {
     case Resource.Vehicles:
       return vehicleId
         ? `vehicles/${vehicleId}/${UseSample()}`
         : `vehicles/${UseSample()}`;
     case (Resource.Entries, Resource.Datapoints):
+      if (!vehicleId) {
+        throw new Error('Vehicle ID is missing');
+      }
       return `vehicles/${vehicleId}/${resource}/${UseSample()}`;
     default:
       throw new Error('Invalid resource');
