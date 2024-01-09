@@ -1,13 +1,13 @@
 import { Card, Metric, Text, Title, BarList, Flex, Grid } from '@tremor/react';
-import { FetchVehicles } from './fetch';
 import { Vehicles } from './[vehicle]/model';
+import { Get, Resource } from '../../lib/callout/callout';
 import CheckIfAuthenticated from '../../components/check-auth';
 import { redirect } from 'next/navigation';
 
 export default async function Page() {
   await CheckIfAuthenticated();
 
-  const vehicles = (await FetchVehicles()) as Vehicles;
+  const vehicles = (await Get(Resource.Vehicles)) as Vehicles;
 
   return (
     <main className="p-4 md:p-10 mx-auto max-w-7xl">
