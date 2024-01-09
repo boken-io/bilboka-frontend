@@ -1,5 +1,5 @@
 import { Card, Metric, Text, Title, BarList, Flex, Grid } from '@tremor/react';
-import { Vehicle } from '../../app/vehicles/[vehicle]/model';
+import { Vehicle } from '../../lib/vehicles/model';
 
 export default function Info({ vehicle }: { vehicle: Vehicle }) {
   return (

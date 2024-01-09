@@ -1,10 +1,10 @@
 import { Card, Metric, Text, Title, BarList, Flex, Grid } from '@tremor/react';
 import CheckIfAuthenticated from '@/lib/auth/check-auth';
-import { Get, Resource } from '@/lib/callout/callout';
+import { Get, Resource } from '@/lib/vehicles/callout';
 import Link from 'next/link';
 import { RegisterFuel } from '@/components/vehicles/register-fuel';
 
-import { Vehicle } from './model';
+import { Vehicle } from '../../../lib/vehicles/model';
 import Info from '@/components/vehicles/info';
 import Chart from '@/components/vehicles/chart';
 

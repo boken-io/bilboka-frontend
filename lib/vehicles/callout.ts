@@ -1,4 +1,4 @@
-import { Vehicles } from '../../app/vehicles/[vehicle]/model';
+import { Vehicles } from './model';
 import { notFound } from 'next/navigation';
 
 export { Get, Resource };
