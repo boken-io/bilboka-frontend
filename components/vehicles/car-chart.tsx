@@ -20,7 +20,7 @@ const data = [
   }
 ];
 
-export default function Example() {
+export default function Chart() {
   return (
     <Card>
       <Title>Performance</Title>

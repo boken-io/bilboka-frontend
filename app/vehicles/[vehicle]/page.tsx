@@ -6,7 +6,7 @@ import { RegisterFuel } from '@/components/vehicles/register-fuel';
 
 import { Vehicle } from './model';
 import Info from './info';
-import Chart from './chart';
+import Chart from '@/components/vehicles/car-chart';
 
 export default async function Page({
   params,
