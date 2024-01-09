@@ -5,8 +5,8 @@ import Link from 'next/link';
 import { RegisterFuel } from '@/components/vehicles/register-fuel';
 
 import { Vehicle } from './model';
-import Info from './info';
-import Chart from '@/components/vehicles/car-chart';
+import Info from '@/components/vehicles/info';
+import Chart from '@/components/vehicles/chart';
 
 export default async function Page({
   params,
