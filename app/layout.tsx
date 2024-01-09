@@ -6,7 +6,7 @@ import { Suspense } from 'react';
 import { Toaster } from 'react-hot-toast';
 
 import { ThemeProvider } from '../components/themes/theme-provider';
-import { DarkModeToggle } from '@/components/themes/DarkModeToggle';
+import { ThemeToggle } from '@/components/themes/theme-toggle';
 
 export const metadata = {
   title: 'Bilboken',
@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="en" className="h-full bg-gray-50">
       <body className={`h-full bg-slate-50 dark:bg-[#0d1117]`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <DarkModeToggle />
+          <ThemeToggle />
           <main>
             <Suspense>
               <Nav />
