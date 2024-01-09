@@ -1,7 +1,7 @@
 import { Card, Metric, Text, Title, BarList, Flex, Grid } from '@tremor/react';
 import { Vehicles } from './[vehicle]/model';
-import { Get, Resource } from '../../lib/callout/callout';
-import CheckIfAuthenticated from '../../components/check-auth';
+import { Get, Resource } from '@/lib/callout/callout';
+import CheckIfAuthenticated from '@/components/check-auth';
 import { redirect } from 'next/navigation';
 
 export default async function Page() {
