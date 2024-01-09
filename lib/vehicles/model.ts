@@ -1,6 +1,8 @@
-export type Vehicles = Vehicle[];
+export type { Vehicles, Vehicle, Entry, Datapoint };
 
-export interface Vehicle {
+type Vehicles = Vehicle[];
+
+interface Vehicle {
   id: string;
   name: string;
   tegnkombinasjon: string;
@@ -9,8 +11,8 @@ export interface Vehicle {
   tankVolume: number;
   lastOdometer?: number;
   lastOdometerKilometers: any;
-  lastYearlyDifference?: LastYearlyDifference;
-  averageFuelConsumption?: AverageFuelConsumption;
+  lastYearlyDifference?: Datapoint;
+  averageFuelConsumption?: Datapoint;
   entriesCount: number;
   understellsnummer?: string;
   regStatus: string;
@@ -23,22 +25,7 @@ export interface Vehicle {
   lengde?: number;
 }
 
-export interface LastYearlyDifference {
-  dateTime: string;
-  odometer: any;
-  odometerKilometers: any;
-  amount: any;
-  costNOK: any;
-  priceNOK: any;
-  isFullTank: any;
-  estimatedConsumptionLitersPer10Km: any;
-  estimatedRemainingFuel: any;
-  averageKilometersPerDay: any;
-  sourceEntryFirst: SourceEntryFirst;
-  sourceEntryLast: SourceEntryLast;
-}
-
-export interface SourceEntryFirst {
+interface Entry {
   id: string;
   type: string;
   dateTime: string;
@@ -52,21 +39,7 @@ export interface SourceEntryFirst {
   comment: any;
 }
 
-export interface SourceEntryLast {
-  id: string;
-  type: string;
-  dateTime: string;
-  odometer: number;
-  odometerKilometers: number;
-  amount: number;
-  costNOK: number;
-  isFullTank: any;
-  maintenanceItem: any;
-  event: any;
-  comment: any;
-}
-
-export interface AverageFuelConsumption {
+interface Datapoint {
   dateTime: string;
   odometer: any;
   odometerKilometers: any;
@@ -77,34 +50,6 @@ export interface AverageFuelConsumption {
   estimatedConsumptionLitersPer10Km: number;
   estimatedRemainingFuel: any;
   averageKilometersPerDay: any;
-  sourceEntryFirst: SourceEntryFirst2;
-  sourceEntryLast: SourceEntryLast2;
-}
-
-export interface SourceEntryFirst2 {
-  id: string;
-  type: string;
-  dateTime: string;
-  odometer: number;
-  odometerKilometers: number;
-  amount: number;
-  costNOK: number;
-  isFullTank: any;
-  maintenanceItem: any;
-  event: any;
-  comment: any;
-}
-
-export interface SourceEntryLast2 {
-  id: string;
-  type: string;
-  dateTime: string;
-  odometer: number;
-  odometerKilometers: number;
-  amount: number;
-  costNOK: number;
-  isFullTank: any;
-  maintenanceItem: any;
-  event: any;
-  comment: any;
+  sourceEntryFirst: Entry;
+  sourceEntryLast: Entry;
 }
