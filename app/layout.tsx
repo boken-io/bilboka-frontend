@@ -1,4 +1,4 @@
-import './globals.css';
+import '@/styles/globals.css';
 
 import Nav from './_components/navbar/nav';
 import Toast from './_components/toast/toast';
