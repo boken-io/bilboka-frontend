@@ -5,7 +5,7 @@ import Toast from '@/components/toast/toast';
 import { Suspense } from 'react';
 import { Toaster } from 'react-hot-toast';
 import { ThemeProvider } from '@/components/themes/theme-provider';
-import { Settings } from '@/components/navbar/settings/modal';
+import { Settings } from '@/components/navbar/settings/settings-modal';
 
 export const metadata = {
   title: 'Bilboken',
