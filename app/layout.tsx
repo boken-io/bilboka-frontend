@@ -1,4 +1,5 @@
 import '@/styles/globals.css';
+import { Providers } from './providers';
 
 import Nav from '@/components/navbar/nav';
 import Toast from '@/components/toast/toast';
@@ -25,9 +26,8 @@ export default function RootLayout({
             <Suspense>
               <Nav />
             </Suspense>
-            <Settings />
             <Toaster position="bottom-center" />
-            {children}
+            <Providers>{children}</Providers>
             <Toast />
           </main>
         </ThemeProvider>
