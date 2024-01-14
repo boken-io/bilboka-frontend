@@ -6,8 +6,9 @@ import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { signIn, signOut } from 'next-auth/react';
 import Image from 'next/image';
+import SettingsMenuButton from './settings/menu-button';
 
-function classNames(...classes: string[]) {
+export function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
 }
 
@@ -186,32 +187,27 @@ export default function Navbar({ user }: { user: any }) {
           >
             <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
               {user ? (
-                <Menu.Item>
-                  {({ active }) => (
+                <>
+                  <Menu.Item>
+                    <SettingsMenuButton />
+                  </Menu.Item>
+                  <Menu.Item>
                     <button
-                      className={classNames(
-                        active ? 'bg-gray-100' : '',
-                        'flex w-full px-4 py-2 text-sm text-gray-700'
-                      )}
+                      className="hover:bg-gray-100 flex w-full px-4 py-2 text-sm text-gray-700"
                       onClick={() => signOut()}
                     >
-                      Sign out
+                      Logg ut
                     </button>
-                  )}
-                </Menu.Item>
+                  </Menu.Item>
+                </>
               ) : (
                 <Menu.Item>
-                  {({ active }) => (
-                    <button
-                      className={classNames(
-                        active ? 'bg-gray-100' : '',
-                        'flex w-full px-4 py-2 text-sm text-gray-700'
-                      )}
-                      onClick={() => signIn('github')}
-                    >
-                      Sign in
-                    </button>
-                  )}
+                  <button
+                    className="hover:bg-gray-100 flex w-full px-4 py-2 text-sm text-gray-700"
+                    onClick={() => signIn('github')}
+                  >
+                    Sign in
+                  </button>
                 </Menu.Item>
               )}
             </Menu.Items>
