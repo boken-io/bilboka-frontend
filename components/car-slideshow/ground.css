@@ -224,29 +224,11 @@
 /*styles for car*/
 .car {
   position: absolute;
-
   top: -35%;
   z-index: 10;
-  -moz-animation: myfirst 10s linear infinite;
-  -webkit-animation: myfirst 10s linear infinite;
+  animation: car-drive 10s linear infinite;
 }
-@keyframes myfirst {
-  0% {
-    left: -25%;
-  }
-  100% {
-    left: 100%;
-  }
-}
-@-moz-keyframes myfirst {
-  0% {
-    left: -25%;
-  }
-  100% {
-    left: 100%;
-  }
-}
-@-webkit-keyframes myfirst {
+@keyframes car-drive {
   0% {
     left: -25%;
   }
@@ -263,8 +245,7 @@
   z-index: 2;
   left: 9px;
   top: 20px;
-  -moz-animation: tyre-rotate 1s infinite linear;
-  -webkit-animation: tyre-rotate 1s infinite linear;
+  animation: tyre-rotate 1s infinite linear;
 }
 @keyframes tyre-rotate {
   from {
@@ -272,22 +253,6 @@
   }
   to {
     transform: rotate(0deg);
-  }
-}
-@-moz-keyframes tyre-rotate {
-  from {
-    -moz-transform: rotate(-360deg);
-  }
-  to {
-    -moz-transform: rotate(0deg);
-  }
-}
-@-webkit-keyframes tyre-rotate {
-  from {
-    -webkit-transform: rotate(-360deg);
-  }
-  to {
-    -webkit-transform: rotate(0deg);
   }
 }
 .tyre:before {
@@ -772,6 +737,18 @@
   border-top-left-radius: 100%;
   z-index: -1;
 }
+.hill:before {
+  background-color: #93cc3a;
+  border-top-left-radius: 0;
+  border-top-right-radius: 100%;
+  bottom: -70px;
+  content: '';
+  height: 110%;
+  left: -54px;
+  position: absolute;
+  transform: rotate(4deg);
+  width: 120%;
+}
 .hill:after {
   background-color: #94c943;
   box-shadow: 0 0 25px #cbf191 inset;
@@ -786,25 +763,18 @@
   -moz-transform: rotate(-12deg);
   -webkit-transform: rotate(-12deg);
 }
-.hill:before {
-  background-color: #93cc3a;
-  border-top-left-radius: 0;
-  border-top-right-radius: 100%;
-  bottom: -70px;
-  content: '';
-  height: 110%;
-  left: -54px;
-  position: absolute;
-  transform: rotate(4deg);
-  width: 120%;
-}
 .dark .hill {
-  background-color: #adde60;
-}
-.dark .hill:after {
-  background-color: #94c943;
-  box-shadow: 0 0 25px #cbf191 inset;
+  background-color: #6d8c3c;
 }
 .dark .hill:before {
-  background-color: #93cc3a;
+  background-color: #618527;
+}
+.dark .hill:after {
+  background-color: #5c7c2b;
+  box-shadow: 0 0 25px #8da766 inset;
+}
+.dark .front-bumper {
+  -webkit-box-shadow: 80px -18px 180px 100px rgba(255, 255, 255, 0.7);
+  -moz-box-shadow: 80px -18px 180px 100px rgba(255, 255, 255, 0.7);
+  box-shadow: 80px -18px 180px 100px rgba(255, 255, 255, 0.7);
 }
