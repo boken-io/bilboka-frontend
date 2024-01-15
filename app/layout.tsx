@@ -1,12 +1,10 @@
 import '@/styles/globals.css';
-import { Providers } from './providers';
 
 import Nav from '@/components/navbar/nav';
 import Toast from '@/components/toast/toast';
 import { Suspense } from 'react';
 import { Toaster } from 'react-hot-toast';
 import { ThemeProvider } from '@/components/themes/theme-provider';
-import { Settings } from '@/components/navbar/settings/settings-modal';
 
 export const metadata = {
   title: 'Bilboken',
@@ -19,15 +17,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="h-full bg-gray-50">
+    <html lang="en" className="h-full" suppressHydrationWarning>
       <body className={`h-full bg-slate-50 dark:bg-[#0d1117]`}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider>
           <main>
             <Suspense>
               <Nav />
             </Suspense>
             <Toaster position="bottom-center" />
-            <Providers>{children}</Providers>
+            {children}
             <Toast />
           </main>
         </ThemeProvider>
