@@ -51,13 +51,21 @@
   left: 40%;
 }
 
+.sleep-bubbles {
+  margin: 0 auto;
+  width: 500px;
+  height: 300px;
+  display: block;
+  position: absolute;
+}
+
 .zzz1,
 .zzz2,
 .zzz3 {
   color: white;
   position: absolute;
   top: 0;
-  right: 10%;
+  left: 800px;
   font-size: 36px;
   opacity: 0;
   font-family: 'Shadows Into Light', cursive;
@@ -199,29 +207,45 @@
   border-top: 0;
 }
 
-.pos-star1 {
-  top: 50px;
-  left: 50px;
+.star:nth-child(1) {
+  margin-top: -200px;
+  margin-left: 80px;
 }
 
-.pos-star2 {
-  top: 250px;
-  left: 450px;
+.star:nth-child(2) {
+  margin-top: -30px;
+  margin-left: 90px;
 }
 
-.pos-star3 {
-  top: 240px;
-  left: 5px;
+.star:nth-child(3) {
+  margin-top: -50px;
+  margin-left: 300px;
+}
+
+.star:nth-child(4) {
+  margin-top: -350px;
+  margin-left: 300px;
+}
+
+.star:nth-child(5) {
+  margin-top: -250px;
+  margin-left: 500px;
+}
+
+.stars {
+  margin: 0 auto;
+  width: 500px;
+  height: 300px;
+  display: block;
+  position: relative;
 }
 
 .star {
   width: 20px;
+  position: absolute;
   height: 20px;
   background-color: white;
-  display: block;
   border-radius: 50%;
-  float: left;
-  position: absolute;
   transform-origin: 50% 50%;
   animation-name: star3;
   animation-duration: 20s;
