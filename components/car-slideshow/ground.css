@@ -656,7 +656,7 @@
 .trunk {
   width: 35px;
   height: 40%;
-  background-color: #774418;
+  background-color: #965822;
   position: relative;
 }
 
@@ -665,7 +665,7 @@
   border-radius: 3px;
   position: absolute;
   content: '';
-  background-color: #774418;
+  background-color: #965822;
   width: 30px;
   height: 60px;
 }
@@ -685,7 +685,7 @@
 .crown {
   height: 60%;
   border-radius: 25%;
-  background-color: #606c38;
+  background-color: #94a657;
   width: 100%;
   position: relative;
 }
@@ -750,4 +750,15 @@
     1600px 0 0 #919191,
     1800px 0 0 #919191,
     2000px 0 0 #919191;
+}
+.dark .trunk {
+  background-color: #774418;
+}
+.dark .trunk::before,
+.dark .trunk::after {
+  background-color: #774418;
+}
+
+.dark .crown {
+  background-color: #606c38;
 }
