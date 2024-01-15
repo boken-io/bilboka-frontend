@@ -6,7 +6,7 @@ import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { signIn, signOut } from 'next-auth/react';
 import Image from 'next/image';
-import SettingsMenuButton from './settings/menu-button';
+import Settings from './settings/settings-modal';
 
 export function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
@@ -189,7 +189,7 @@ export default function Navbar({ user }: { user: any }) {
               {user ? (
                 <>
                   <Menu.Item>
-                    <SettingsMenuButton />
+                    <Settings />
                   </Menu.Item>
                   <Menu.Item>
                     <button
