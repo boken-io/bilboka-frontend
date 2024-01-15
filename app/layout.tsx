@@ -8,7 +8,7 @@ import clsx from 'clsx';
 import { Metadata } from 'next';
 import { siteConfig } from '@/config/site';
 import { fontSans } from '@/config/fonts';
-import { Navbar } from '../components/navbar/nav';
+import Nav from '../components/navbar/nav';
 
 export const metadata: Metadata = {
   title: {
@@ -44,7 +44,7 @@ export default function RootLayout({
         <ThemeProvider>
           <main>
             <Suspense>
-              <Navbar />
+              <Nav />
             </Suspense>
             <Toaster position="bottom-center" />
             {children}
