@@ -221,7 +221,7 @@
 .l:nth-child(2) {
   right: -10px;
 }
-/*styles for car*/
+
 .car {
   position: absolute;
   top: -35%;
@@ -313,10 +313,6 @@
   left: 94px;
 }
 .car-body {
-  /*width:125px;
-	height:24px;
-	background:#d1352b;
-	border-top:1px solid #a82e27;*/
   border-bottom: 24px solid #d1352b;
   height: 0;
   top: 10px;

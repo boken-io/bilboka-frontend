@@ -23,7 +23,7 @@ import clsx from 'clsx';
 
 import User from './user';
 import { ThemeSwitcher } from '@/components/themes/theme-switcher';
-import { Logo, GithubIcon, SearchIcon } from '@/components/icons';
+import { Logo, GithubIcon, SearchIcon } from '@/components/icons/icons';
 
 export default function Navbar({ user }: { user: any }) {
   const pathname = usePathname();
