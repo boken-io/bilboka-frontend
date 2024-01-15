@@ -6,7 +6,7 @@ import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { signIn, signOut } from 'next-auth/react';
 import Image from 'next/image';
-import Settings from './settings/settings-modal';
+import Settings from '../settings/settings';
 
 export function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
