@@ -6,23 +6,23 @@ import {
   ModalHeader,
   ModalBody,
   ModalFooter,
-  useDisclosure,
-  UseDisclosureProps
-} from '@nextui-org/modal';
+  Button,
+  useDisclosure
+} from '@nextui-org/react';
 import LoginOptions from './login-options';
 import { useRouter } from 'next/navigation';
 
-export default function LoginModal(
-  SidebarContext: UseDisclosureProps | undefined
-) {
-  const { isOpen, onOpen, onOpenChange } = useDisclosure(SidebarContext);
-
-  // let { isOpen } = useContext(SidebarContext);
+export default function LoginModal() {
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   const router = useRouter();
 
+  function closeModal() {
+    router.back();
+  }
+
   return (
-    <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
+    <Modal isOpen={true} onOpenChange={onOpenChange} onClose={closeModal}>
       <ModalContent>
         {(onClose) => (
           <>

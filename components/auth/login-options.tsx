@@ -3,6 +3,7 @@
 import { Card } from '@tremor/react';
 import { signIn } from 'next-auth/react';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 const imageStyle = {
   // TODO: add hover effect
@@ -13,13 +14,19 @@ const disabled = {
 };
 
 export default function LoginOptions() {
+  const pathname = usePathname();
+
+  function login(provider: string) {
+    signIn(provider, { callbackUrl: pathname });
+  }
+
   return (
     <Card className="grid gap-6 justify-items-center">
       <h2 className="text-2xl">Logg inn</h2>
       <div className="grid grid-flow-col auto-cols-max gap-4 justify-center">
         <Image
           className="rounded-full cursor-pointer"
-          onClick={() => signIn('apple')}
+          onClick={() => login('apple')}
           src="/auth/apple.webp"
           height={64}
           width={64}
@@ -28,7 +35,7 @@ export default function LoginOptions() {
         />
         <Image
           className="rounded-full cursor-pointer"
-          onClick={() => signIn('facebook')}
+          onClick={() => login('facebook')}
           src="/auth/facebook.webp"
           height={64}
           width={64}
@@ -37,7 +44,7 @@ export default function LoginOptions() {
         />
         <Image
           className="rounded-full cursor-pointer"
-          onClick={() => signIn('google')}
+          onClick={() => login('google')}
           src="/auth/google.webp"
           height={64}
           width={64}
@@ -46,7 +53,7 @@ export default function LoginOptions() {
         />
         <Image
           className="rounded-full cursor-pointer"
-          onClick={() => signIn('github')}
+          onClick={() => login('github')}
           src="/auth/github.webp"
           height={64}
           width={64}

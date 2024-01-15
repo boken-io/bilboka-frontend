@@ -6,17 +6,12 @@ import { signIn, signOut } from 'next-auth/react';
 import Image from 'next/image';
 import LoginModal from '@/components/auth/login-modal';
 import { useRouter } from 'next/navigation';
-import React, { useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 
 export default function User({ user }: { user: any }) {
   const router = useRouter();
-
-  let openLogin = false;
-  function login() {
-    openLogin = true;
-  }
-
-  const [data, setData] = useState(null);
+  const searchParams = useSearchParams();
+  const showLogin = searchParams.get('login') && !user;
 
   return (
     <div className="hidden sm:ml-6 sm:flex sm:items-center">
@@ -24,10 +19,10 @@ export default function User({ user }: { user: any }) {
         <div>
           <Menu.Button
             className="flex rounded-full bg-white text-sm focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2"
-            onClick={() => !user && login()}
+            onClick={() => !user && router.push('?login=true')}
           >
             <div className="grid grid-flow-col auto-cols-max gap-4">
-              <div className="place-self-center place-self-end">
+              <div className="place-self-center">
                 {user?.name || 'Logg inn'}
               </div>
               <div className="place-self-end">
@@ -67,7 +62,7 @@ export default function User({ user }: { user: any }) {
           </Transition>
         )}
       </Menu>
-      {openLogin && <LoginModal SidebarContext={SidebarContext} />}
+      {showLogin && <LoginModal />}
     </div>
   );
 }
