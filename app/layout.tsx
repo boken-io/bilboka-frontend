@@ -1,6 +1,5 @@
 import '@/styles/globals.css';
 
-import Nav from '@/components/navbar/nav';
 import Toast from '@/components/toast/toast';
 import { Suspense } from 'react';
 import { Toaster } from 'react-hot-toast';
@@ -9,6 +8,7 @@ import clsx from 'clsx';
 import { Metadata } from 'next';
 import { siteConfig } from '@/config/site';
 import { fontSans } from '@/config/fonts';
+import { Navbar } from '../components/navbar/nav';
 
 export const metadata: Metadata = {
   title: {
@@ -44,7 +44,7 @@ export default function RootLayout({
         <ThemeProvider>
           <main>
             <Suspense>
-              <Nav />
+              <Navbar />
             </Suspense>
             <Toaster position="bottom-center" />
             {children}

@@ -21,6 +21,7 @@ export default async function Vehicles() {
             </div>
             <div className="grow justify-self-end">
               <div>
+                {/* make headlights go on in dark mode */}
                 <Image
                   src={`/vehicles/volvo/${vehicle.id}.webp`}
                   width="100"
