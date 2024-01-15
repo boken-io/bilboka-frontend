@@ -27,7 +27,7 @@ export default function LoginModal() {
         {(onClose) => (
           <>
             <ModalHeader className="flex flex-col gap-1">Logg inn</ModalHeader>
-            <ModalBody>
+            <ModalBody className="p-5 pb-7">
               <LoginOptions />
             </ModalBody>
           </>

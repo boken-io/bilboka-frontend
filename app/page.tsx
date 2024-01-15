@@ -1,9 +1,9 @@
-import LoginOptions from '@/components/auth/login-options';
+import CarSlideshow from '@/components/car-slideshow/car-slideshow';
 
 export default async function IndexPage() {
   return (
-    <main className="p-4 md:p-10 mx-auto max-w-7xl">
-      <LoginOptions></LoginOptions>
+    <main className="">
+      <CarSlideshow />
     </main>
   );
 }
