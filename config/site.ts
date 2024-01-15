@@ -21,6 +21,11 @@ export const siteConfig = {
     {
       label: 'Statistikk',
       href: '/stats'
+    },
+    {
+      label: 'Logg ut',
+      href: '/logout',
+      color: 'danger'
     }
   ],
   links: {

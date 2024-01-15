@@ -21,34 +21,13 @@ import { siteConfig } from '@/config/site';
 import NextLink from 'next/link';
 import clsx from 'clsx';
 
+import User from './user';
 import { ThemeSwitcher } from '@/components/themes/theme-switcher';
-import { GithubIcon, SearchIcon } from '@/components/icons';
-
-import { Logo } from '@/components/icons';
+import { Logo, GithubIcon, SearchIcon } from '@/components/icons';
 
 export default function Navbar({ user }: { user: any }) {
   const pathname = usePathname();
-
-  const searchInput = (
-    <Input
-      aria-label="Search"
-      classNames={{
-        inputWrapper: 'bg-default-100',
-        input: 'text-sm'
-      }}
-      endContent={
-        <Kbd className="hidden lg:inline-block" keys={['command']}>
-          K
-        </Kbd>
-      }
-      labelPlacement="outside"
-      placeholder="Search..."
-      startContent={
-        <SearchIcon className="text-base text-default-400 pointer-events-none flex-shrink-0" />
-      }
-      type="search"
-    />
-  );
+  console.log(pathname);
 
   return (
     <NextUINavbar maxWidth="xl" position="sticky">
@@ -56,7 +35,7 @@ export default function Navbar({ user }: { user: any }) {
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
             <Logo />
-            <p className="font-bold text-inherit">ACME</p>
+            <p className="font-bold text-inherit">{siteConfig.name}</p>
           </NextLink>
         </NavbarBrand>
         <ul className="hidden lg:flex gap-4 justify-start ml-2">
@@ -64,8 +43,11 @@ export default function Navbar({ user }: { user: any }) {
             <NavbarItem key={item.href}>
               <NextLink
                 className={clsx(
-                  linkStyles({ color: 'foreground' }),
-                  'data-[active=true]:text-primary data-[active=true]:font-medium'
+                  linkStyles({
+                    color: 'foreground',
+                    underline: currentPath(item) ? 'always' : 'none'
+                  }),
+                  'underline data-[active=true]:text-primary data-[active=true]:font-medium'
                 )}
                 color="foreground"
                 href={item.href}
@@ -77,6 +59,7 @@ export default function Navbar({ user }: { user: any }) {
         </ul>
       </NavbarContent>
 
+      {/* normal view */}
       <NavbarContent
         className="hidden sm:flex basis-1/5 sm:basis-full"
         justify="end"
@@ -87,31 +70,33 @@ export default function Navbar({ user }: { user: any }) {
           </Link>
           <ThemeSwitcher />
         </NavbarItem>
-        {/* <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem> */}
+        <User user={user} />
       </NavbarContent>
 
+      {/* mobile view */}
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
-        <Link isExternal href={siteConfig.links.github} aria-label="Github">
-          <GithubIcon className="text-default-500" />
-        </Link>
+        <User user={user} />
         <ThemeSwitcher />
         <NavbarMenuToggle />
       </NavbarContent>
 
       <NavbarMenu>
-        {searchInput}
         <div className="mx-4 mt-2 flex flex-col gap-2">
           {siteConfig.navMenuItems.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
               <Link
+                underline={currentPath(item) ? 'always' : 'none'}
                 color={
-                  index === 2
-                    ? 'primary'
-                    : index === siteConfig.navMenuItems.length - 1
-                      ? 'danger'
-                      : 'foreground'
+                  (item.color as
+                    | 'danger'
+                    | 'foreground'
+                    | 'primary'
+                    | 'secondary'
+                    | 'success'
+                    | 'warning'
+                    | undefined) || 'foreground'
                 }
-                href="#"
+                href={item.href}
                 size="lg"
               >
                 {item.label}
@@ -122,4 +107,8 @@ export default function Navbar({ user }: { user: any }) {
       </NavbarMenu>
     </NextUINavbar>
   );
+
+  function currentPath(item: any) {
+    return pathname === item.href;
+  }
 }
