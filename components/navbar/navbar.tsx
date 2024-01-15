@@ -27,7 +27,6 @@ import { Logo, GithubIcon, SearchIcon } from '@/components/icons';
 
 export default function Navbar({ user }: { user: any }) {
   const pathname = usePathname();
-  console.log(pathname);
 
   return (
     <NextUINavbar maxWidth="xl" position="sticky">

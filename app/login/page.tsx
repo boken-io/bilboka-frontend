@@ -1,23 +1,21 @@
 'use client';
 
-import { Heading } from '@chakra-ui/react';
-import { Card, Title, Text } from '@tremor/react';
 import { signIn } from 'next-auth/react';
 import Image from 'next/image';
 
-const imageStyle = {
-  // TODO: add hover effect
-};
-const disabled = {
-  cursor: 'not-allowed',
-  opacity: '0.3'
-};
+export default function LoginPage() {
+  const imageStyle = {
+    // TODO: add hover effect
+  };
 
-export default function LoginOptions() {
+  const disabled = {
+    cursor: 'not-allowed',
+    opacity: '0.3'
+  };
+
   return (
-    <Card className="grid gap-6 justify-items-center">
-      <h2 className="text-2xl">Logg inn</h2>
-      <div className="grid grid-flow-col auto-cols-max gap-4 justify-center">
+    <div className="mt-5">
+      <div className="grid grid-flow-col auto-cols-max gap-4 justify-center content-center">
         <Image
           className="rounded-full cursor-pointer"
           onClick={() => signIn('apple')}
@@ -55,6 +53,6 @@ export default function LoginOptions() {
           style={imageStyle}
         />
       </div>
-    </Card>
+    </div>
   );
 }
