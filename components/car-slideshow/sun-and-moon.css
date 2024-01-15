@@ -93,7 +93,7 @@
   margin-top: 15px;
   height: 15px;
   width: 15px;
-  diplay: block;
+  display: block;
   border-radius: 0px 0px 50% 50%;
   background-color: transparent;
   float: left;
@@ -109,7 +109,7 @@
   margin-top: 15px;
   height: 25px;
   width: 25px;
-  diplay: block;
+  display: block;
   border-radius: 50%;
   background-color: #151843;
   float: left;
@@ -144,7 +144,7 @@
   position: absolute;
   display: block;
   top: -3px;
-  left: 15px;
+  left: 3px;
   background-color: #151843;
   border-radius: 50%;
 }
