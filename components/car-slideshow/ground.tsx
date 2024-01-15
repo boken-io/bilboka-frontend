@@ -6,7 +6,7 @@ export default function Ground() {
   return (
     <div className="fixed bottom-0 container">
       <div className="country-wrap min-h-screen">
-        <div className="grass" />
+        <div className="upper-curb" />
         <div className="street">
           <div className="car">
             <div className="car-body">
@@ -39,6 +39,16 @@ export default function Ground() {
           </div>
         </div>
         <div className="street-stripe" />
+        <div className="trees">
+          <div className="tree">
+            <div className="crown" />
+            <div className="trunk" />
+          </div>
+          <div className="tree">
+            <div className="crown" />
+            <div className="trunk" />
+          </div>
+        </div>
         <div className="hill" />
       </div>
     </div>
