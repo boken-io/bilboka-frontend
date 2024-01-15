@@ -22,7 +22,12 @@ export default function LoginModal() {
   }
 
   return (
-    <Modal isOpen={true} onOpenChange={onOpenChange} onClose={closeModal}>
+    <Modal
+      isOpen={true}
+      backdrop="blur"
+      onOpenChange={onOpenChange}
+      onClose={closeModal}
+    >
       <ModalContent>
         {(onClose) => (
           <>
