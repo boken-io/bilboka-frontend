@@ -226,7 +226,7 @@
   position: absolute;
   top: -35%;
   z-index: 10;
-  animation: car-drive 10s linear infinite;
+  animation: car-drive 8s linear infinite;
 }
 @keyframes car-drive {
   0% {
@@ -245,7 +245,7 @@
   z-index: 2;
   left: 9px;
   top: 20px;
-  animation: tyre-rotate 1s infinite linear;
+  animation: tyre-rotate 0.8s infinite linear;
 }
 @keyframes tyre-rotate {
   from {
