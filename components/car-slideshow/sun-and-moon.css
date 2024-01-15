@@ -432,7 +432,7 @@
   top: -50px;
 }
 
-.day #nightbg {
+.day .nightbg {
   transform: scale(30);
 }
 

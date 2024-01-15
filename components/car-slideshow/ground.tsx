@@ -1,12 +1,8 @@
-import clsx from 'clsx';
-import { useTheme } from 'next-themes';
-import './slideshow.css';
+'use client';
+
+import './ground.css';
 
 export default function Ground() {
-  const { theme } = useTheme();
-  let isDark = theme === 'dark';
-  let isLight = theme === 'light';
-
   return (
     <div className="fixed bottom-0 container">
       <div className="country-wrap min-h-screen">

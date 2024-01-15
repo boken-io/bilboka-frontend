@@ -1,15 +1,13 @@
 'use client';
 
 import './sun-and-moon.css';
-import { useTheme } from 'next-themes';
 import clsx from 'clsx';
+import { useTheme } from 'next-themes';
+
 export default function SunAndMoon() {
   const { theme } = useTheme();
   let isDark = theme === 'dark';
   let isLight = theme === 'light';
-
-  console.log(isDark, isLight);
-
   return (
     <div
       className={clsx(
@@ -18,24 +16,24 @@ export default function SunAndMoon() {
       )}
     >
       <div className="sun-and-moon-wrapper">
-        <div className="nightbg"></div>
-        <div className="zzz1"></div>
-        <div className="zzz2"></div>
-        <div className="zzz3"></div>
+        <div className="nightbg" />
+        <div className="zzz1" />
+        <div className="zzz2" />
+        <div className="zzz3" />
         <div className="planet">
           <div className="face">
             <div className="eye">
-              <div className="eye-in"></div>
+              <div className="eye-in" />
             </div>
-            <div className="mouth"></div>
+            <div className="mouth" />
             <div className="eye">
-              <div className="eye-in"></div>
+              <div className="eye-in" />
             </div>
           </div>
         </div>
-        <div className="star pos-star1"></div>
-        <div className="star pos-star2"></div>
-        <div className="star pos-star3"></div>
+        <div className="star pos-star1" />
+        <div className="star pos-star2" />
+        <div className="star pos-star3" />
       </div>
     </div>
   );
