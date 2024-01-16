@@ -48,7 +48,7 @@ export default function RootLayout({
             </Suspense>
             <Toaster position="bottom-center" />
             {children}
-            <Toast />
+            {/* <Toast /> */}
           </main>
         </ThemeProvider>
       </body>

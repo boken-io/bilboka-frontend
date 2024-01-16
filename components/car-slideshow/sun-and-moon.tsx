@@ -16,7 +16,7 @@ export default function SunAndMoon() {
       )}
     >
       <div className="sun-and-moon-wrapper">
-        <div className="nightbg" />
+        <div className="day_background" />
         <div className="sleep-bubbles">
           <div className="zzz1" />
           <div className="zzz2" />
@@ -34,11 +34,11 @@ export default function SunAndMoon() {
           </div>
         </div>
         <div className="stars">
-          <div className="star pos-star1" />
-          <div className="star pos-star2" />
-          <div className="star pos-star3" />
-          <div className="star pos-star4" />
-          <div className="star pos-star5" />
+          <div className="star" />
+          <div className="star" />
+          <div className="star" />
+          <div className="star" />
+          <div className="star" />
         </div>
       </div>
     </div>
