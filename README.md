@@ -4,6 +4,6 @@ Frontend (next.js) implementation of a car petrol tracking system, including cos
 
 # Credits
 
-https://codepen.io/claudiosc8/pen/QqpoOm
-
-https://codepen.io/aman4404/pen/RwwpjWa
+- https://codepen.io/claudiosc8/pen/QqpoOm
+- https://codepen.io/aman4404/pen/RwwpjWa
+- https://codepen.io/LSegg/pen/bGvPvBP
