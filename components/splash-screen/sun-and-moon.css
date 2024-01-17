@@ -78,10 +78,7 @@
 }
 
 .sleep-bubbles {
-  display: block;
   position: absolute;
-  width: 500px;
-  height: 300px;
   margin: 0 auto;
 }
 
@@ -90,9 +87,6 @@
 .zzz3 {
   opacity: 1;
   position: absolute;
-  top: 0;
-  right: 10%;
-  left: 800px;
   color: white;
   font-size: 36px;
   font-family: 'Shadows Into Light', cursive;

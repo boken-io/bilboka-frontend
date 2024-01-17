@@ -17,12 +17,12 @@ export default function SunAndMoon() {
     >
       <div className="sun-and-moon-wrapper">
         <div className="day_background" />
-        <div className="sleep-bubbles">
-          <div className="zzz1" />
-          <div className="zzz2" />
-          <div className="zzz3" />
-        </div>
         <div className="planet">
+          <div className="sleep-bubbles">
+            <div className="zzz1" />
+            <div className="zzz2" />
+            <div className="zzz3" />
+          </div>
           <div className="face">
             <div className="eye">
               <div className="eye-in" />
