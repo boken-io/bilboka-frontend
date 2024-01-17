@@ -1,9 +1,9 @@
-import CarSlideshow from '@/components/car-slideshow/car-slideshow';
+import SplashScreen from '@/components/splash-screen/splash-screen';
 
 export default async function IndexPage() {
   return (
     <main className="">
-      <CarSlideshow />
+      <SplashScreen />
     </main>
   );
 }
