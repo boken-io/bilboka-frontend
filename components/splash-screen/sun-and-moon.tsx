@@ -17,6 +17,20 @@ export default function SunAndMoon() {
     >
       <div className="sun-and-moon-wrapper">
         <div className="day_background" />
+        <div className="clouds">
+          <div className="cloud" />
+          <div className="cloud" />
+          <div className="cloud" />
+          <div className="cloud" />
+          <div className="cloud" />
+        </div>
+        <div className="stars">
+          <div className="star" />
+          <div className="star" />
+          <div className="star" />
+          <div className="star" />
+          <div className="star" />
+        </div>
         <div className="planet">
           <div className="sleep-bubbles">
             <div className="zzz1" />
@@ -32,13 +46,6 @@ export default function SunAndMoon() {
               <div className="eye-in" />
             </div>
           </div>
-        </div>
-        <div className="stars">
-          <div className="star" />
-          <div className="star" />
-          <div className="star" />
-          <div className="star" />
-          <div className="star" />
         </div>
       </div>
     </div>

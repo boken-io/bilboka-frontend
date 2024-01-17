@@ -3,6 +3,11 @@
   background-color: #151843;
 }
 
+/* .dark .sun-and-moon {
+  min-width: 100%;
+  background-color: #151843;
+} */
+
 .sun-and-moon-wrapper {
   position: relative;
   height: 100%;
@@ -34,6 +39,10 @@
   content: '';
   background-color: rgba(173, 216, 230, 0.1);
 }
+
+/* -------------------------------------------------------------------------- */
+/*                                   PLANET                                   */
+/* -------------------------------------------------------------------------- */
 
 .planet {
   display: block;
@@ -76,6 +85,10 @@
   width: 100px;
 }
 
+/* -------------------------------------------------------------------------- */
+/*                                SLEEP BUBBLES                               */
+/* -------------------------------------------------------------------------- */
+
 .sleep-bubbles {
   position: absolute;
   margin: 0 auto;
@@ -114,6 +127,42 @@
   animation-delay: 0.4s;
 }
 
+@keyframes zzz-sleep {
+  0% {
+    opacity: 0;
+    transform: translate(0px, 0px) scale(1, 1);
+  }
+  25% {
+    transform: translate(-5px, -10px) scale(1.1, 1.1);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(8px, -20px) scale(0.9, 0.9);
+  }
+  75% {
+    transform: translate(-15px, -30px) scale(1.1, 1.1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(15px, -40px) scale(0.9, 0.9);
+  }
+}
+
+@keyframes zzz-awake {
+  0% {
+    transform: translate(0px, 0px) scale(1, 1) rotate(0deg);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-15px, -30px) scale(2, 2) rotate(10deg);
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                    MOUTH                                   */
+/* -------------------------------------------------------------------------- */
+
 .mouth {
   display: block;
   position: relative;
@@ -149,6 +198,25 @@
   left: 3px;
 }
 
+@keyframes mouth-sleep {
+  0% {
+    transform: scale(1, 1);
+  }
+  35% {
+    transform: scale(0.7, 0.7);
+  }
+  40% {
+    transform: scale(0.7, 0.7);
+  }
+  75% {
+    transform: scale(1, 1);
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                     EYE                                    */
+/* -------------------------------------------------------------------------- */
+
 .eye {
   display: block;
   position: relative;
@@ -176,6 +244,126 @@
   transform: scale(1, 1) !important;
 }
 
+@keyframes eye-blink {
+  0% {
+    transform: scale(1, 1);
+  }
+  2% {
+    transform: scale(1, 0);
+  }
+  4% {
+    transform: scale(1, 1);
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                   CLOUDS                                   */
+/* -------------------------------------------------------------------------- */
+
+.cloud:nth-child(1) {
+  right: 0px;
+  animation-duration: 25s;
+}
+
+.cloud:nth-child(2) {
+  margin-top: -30px;
+  margin-left: 90px;
+  animation-duration: 30s;
+}
+
+.cloud:nth-child(3) {
+  margin-top: -50px;
+  margin-left: 300px;
+  animation-duration: 32s;
+}
+
+.cloud:nth-child(4) {
+  margin-top: -350px;
+  margin-left: 300px;
+  animation-duration: 36s;
+}
+
+.cloud:nth-child(5) {
+  margin-top: -250px;
+  margin-left: 500px;
+  animation-duration: 28s;
+}
+
+.cloud {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: white;
+  transition: all 0.5s ease-in-out;
+  animation-name: wiggle;
+  transform-origin: 50% 50%;
+}
+
+@keyframes wiggle {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  100% {
+    transform: translate(2000px, 0px);
+  }
+}
+
+.cloud:before {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  content: '';
+  background-color: white;
+  transition: all 0.3s ease-out;
+  animation-name: none;
+  transform: none;
+}
+
+.cloud:after {
+  position: absolute;
+  left: 150%;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  content: '';
+  background-color: white;
+  box-shadow:
+    -50px -25px 0px 10px white,
+    -10px -25px 0px -5px white,
+    inset -7px 0px 0px 3px #ebf3fe;
+  transition: all 0.3s ease-out;
+  animation-name: none;
+  transform: none;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                    STARS                                   */
+/* -------------------------------------------------------------------------- */
+
+.star {
+  position: absolute;
+  border-radius: 50%;
+  background-color: white;
+  transform-origin: 50% 50%;
+}
+
+.star:before {
+  position: absolute;
+  content: '';
+  background-color: white;
+  transition: all 0.3s ease-out;
+}
+.star:after {
+  position: absolute;
+  content: '';
+  background-color: white;
+  transition: all 0.3s ease-out;
+}
+
 .star:nth-child(1) {
   margin-top: -200px;
   margin-left: 80px;
@@ -199,58 +387,6 @@
 .star:nth-child(5) {
   margin-top: -250px;
   margin-left: 500px;
-}
-
-.stars {
-  display: block;
-  position: relative;
-  width: 500px;
-  height: 300px;
-  margin: 0 auto;
-}
-
-.star {
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: white;
-  transition: all 0.3s ease-out;
-  animation-name: wiggle;
-  animation-duration: 10s;
-  transform-origin: 50% 50%;
-  transform-origin: 50% 50%;
-}
-
-.star:before {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  content: '';
-  background-color: white;
-  transition: all 0.3s ease-out;
-  animation-name: none;
-  transform: none;
-}
-
-.star:after {
-  position: absolute;
-  left: 150%;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  content: '';
-  background-color: white;
-  box-shadow:
-    -50px -25px 0px 10px white,
-    -10px -25px 0px -5px white,
-    inset -7px 0px 0px 3px #ebf3fe;
-  transition: all 0.3s ease-out;
-  animation-name: none;
-  transform: none;
 }
 
 @keyframes star1 {
@@ -286,77 +422,6 @@
   }
 }
 
-@keyframes eye-blink {
-  0% {
-    transform: scale(1, 1);
-  }
-  2% {
-    transform: scale(1, 0);
-  }
-  4% {
-    transform: scale(1, 1);
-  }
-}
-
-@keyframes mouth-sleep {
-  0% {
-    transform: scale(1, 1);
-  }
-  35% {
-    transform: scale(0.7, 0.7);
-  }
-  40% {
-    transform: scale(0.7, 0.7);
-  }
-  75% {
-    transform: scale(1, 1);
-  }
-}
-
-@keyframes wiggle {
-  0% {
-    transform: translate(0px, 0px);
-  }
-  50% {
-    transform: translate(50px, 0px);
-  }
-  100% {
-    transform: translate(0px, 0px);
-  }
-}
-
-@keyframes zzz-sleep {
-  0% {
-    opacity: 0;
-    transform: translate(0px, 0px) scale(1, 1);
-  }
-  25% {
-    transform: translate(-5px, -10px) scale(1.1, 1.1);
-  }
-  50% {
-    opacity: 1;
-    transform: translate(8px, -20px) scale(0.9, 0.9);
-  }
-  75% {
-    transform: translate(-15px, -30px) scale(1.1, 1.1);
-  }
-  100% {
-    opacity: 0;
-    transform: translate(15px, -40px) scale(0.9, 0.9);
-  }
-}
-
-@keyframes zzz-awake {
-  0% {
-    transform: translate(0px, 0px) scale(1, 1) rotate(0deg);
-  }
-
-  100% {
-    opacity: 0;
-    transform: translate(-15px, -30px) scale(2, 2) rotate(10deg);
-  }
-}
-
 /* -------------------------------------------------------------------------- */
 /*                                    DARK                                    */
 /* -------------------------------------------------------------------------- */
@@ -379,6 +444,15 @@
     40px 10px 0px -15px #d8e8f7;
 }
 
+.dark .cloud {
+  transition: all 0.5s ease;
+  opacity: 0;
+}
+.dark .clouds {
+  transition: all 0.5s ease;
+  transform: scale(1.05);
+}
+
 .dark .star {
   width: 20px;
   height: 20px;
@@ -386,6 +460,7 @@
   animation-duration: 20s;
   animation-timing-function: ease;
   animation-iteration-count: infinite;
+  transition: all 1s ease;
 }
 
 .dark .star:before {
