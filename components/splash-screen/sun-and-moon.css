@@ -88,16 +88,14 @@
 .zzz1,
 .zzz2,
 .zzz3 {
+  opacity: 1;
   position: absolute;
   top: 0;
-
+  right: 10%;
   left: 800px;
   color: white;
   font-size: 36px;
   font-family: 'Shadows Into Light', cursive;
-
-  opacity: 1;
-  right: 10%;
   animation-name: zzz-awake;
   animation-duration: 1s;
   animation-timing-function: ease-in-out;
@@ -127,10 +125,10 @@
   display: block;
   position: relative;
   float: left;
-  margin-top: 15px;
-  margin-right: 10px;
   width: 15px;
   height: 15px;
+  margin-top: 15px;
+  margin-right: 10px;
   margin-left: 0px;
   border: 6px solid #151843;
   border-top: 0;
@@ -221,27 +219,27 @@
 
 .star {
   position: absolute;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   background-color: white;
   transition: all 0.3s ease-out;
-  transform-origin: 50% 50%;
-  width: 50px;
-  height: 50px;
   animation-name: wiggle;
   animation-duration: 10s;
+  transform-origin: 50% 50%;
   transform-origin: 50% 50%;
 }
 
 .star:before {
   position: absolute;
-  content: '';
-  background-color: white;
-  transition: all 0.3s ease-out;
   top: 0;
   left: 50%;
   width: 50px;
   height: 50px;
   border-radius: 50%;
+  content: '';
+  background-color: white;
+  transition: all 0.3s ease-out;
   animation-name: none;
   transform: none;
 }
@@ -249,18 +247,18 @@
 .star:after {
   position: absolute;
 
-  content: '';
-  background-color: white;
-  transition: all 0.3s ease-out;
-
   left: 150%;
   width: 50px;
   height: 50px;
+
   border-radius: 50%;
+  content: '';
+  background-color: white;
   box-shadow:
     -50px -25px 0px 10px white,
     -10px -25px 0px -5px white,
     inset -7px 0px 0px 3px #ebf3fe;
+  transition: all 0.3s ease-out;
   animation-name: none;
   transform: none;
 }
@@ -401,6 +399,8 @@
 }
 
 .dark .star:before {
+  top: auto;
+  left: auto;
   width: 20px;
   height: 20px;
   border-radius: 20%;
@@ -409,14 +409,12 @@
   animation-timing-function: ease-out;
   animation-iteration-count: infinite;
   transform: scale(1, 2) rotate(45deg);
-  top: auto;
-  left: auto;
 }
 
 .dark .star:after {
+  left: auto;
   width: 20px;
   height: 20px;
-  left: auto;
   border-radius: 20%;
   box-shadow: none;
   animation-name: star2;
@@ -430,13 +428,13 @@
 .dark .zzz1,
 .dark .zzz2,
 .dark .zzz3 {
-  animation-fill-mode: none;
   opacity: 0;
   right: auto;
   animation-name: zzz-sleep;
   animation-duration: 5s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
+  animation-fill-mode: none;
 }
 .dark .zzz1:after,
 .dark .zzz2:after,
