@@ -23,6 +23,9 @@ export default function SunAndMoon() {
           <div className="cloud" />
           <div className="cloud" />
           <div className="cloud" />
+          <div className="cloud" />
+          <div className="cloud" />
+          <div className="cloud" />
         </div>
         <div className="stars">
           <div className="star" />

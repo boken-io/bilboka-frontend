@@ -340,8 +340,8 @@
   border-radius: 50%;
   background-color: white;
   transition: all 0.5s ease-in-out;
-  animation-name: wiggle;
   transform-origin: 50% 50%;
+  z-index: 500;
 }
 .dark .cloud {
   transition: all 0.5s ease;
@@ -360,7 +360,7 @@
   border-radius: 50%;
   content: '';
   background-color: white;
-  transition: all 0.3s ease-out;
+  transition: all 0.3s ease-in-out;
   animation-name: none;
   transform: none;
 }
@@ -377,41 +377,98 @@
     -50px -25px 0px 10px white,
     -10px -25px 0px -5px white,
     inset -7px 0px 0px 3px #ebf3fe;
-  transition: all 0.3s ease-out;
+  transition: all 0.3s ease-in-out;
   animation-name: none;
   transform: none;
 }
 .cloud:nth-child(1) {
-  right: 0px;
-  animation-duration: 25s;
+  margin: 50px 0 0 -150px;
+  animation-name: float;
+  animation-duration: 85s;
 }
 .cloud:nth-child(2) {
-  margin-top: -30px;
-  margin-left: 90px;
-  animation-duration: 30s;
+  margin: 140px 0 0 50px;
+  animation-name: float;
+  animation-duration: 78s;
 }
 .cloud:nth-child(3) {
-  margin-top: -50px;
-  margin-left: 300px;
-  animation-duration: 32s;
+  margin: 220px 0 0 0;
+  animation-name: float;
+  animation-duration: 72s;
 }
 .cloud:nth-child(4) {
-  margin-top: -350px;
-  margin-left: 300px;
-  animation-duration: 36s;
+  margin: 50px 0 0 -150px;
+  animation-name: float;
+  animation-duration: 76s;
 }
 .cloud:nth-child(5) {
-  margin-top: -250px;
-  margin-left: 500px;
-  animation-duration: 28s;
+  margin: 250px 0 0 0;
+  animation-name: float2;
+  animation-duration: 74s;
+}
+.cloud:nth-child(6) {
+  margin: 100px 0 0 50px;
+  animation-name: float2;
+  animation-duration: 74s;
+}
+.cloud:nth-child(7) {
+  margin: 350px 0 0 150px;
+  animation-name: float2;
+  animation-duration: 74s;
+}
+.cloud:nth-child(8) {
+  margin: 150px 0 0 -100px;
+  animation-name: float2;
+  animation-duration: 74s;
 }
 
-@keyframes wiggle {
+@keyframes float {
   0% {
-    transform: translate(0px, 0px);
+    left: 30%;
+    opacity: 1;
+  }
+  66% {
+    opacity: 1;
+    left: 110%;
+  }
+  67% {
+    opacity: 0;
+  }
+  68% {
+    opacity: 0;
+    left: -10%;
+  }
+  70% {
+    opacity: 1;
   }
   100% {
-    transform: translate(2000px, 0px);
+    opacity: 1;
+    left: 30%;
+  }
+}
+
+@keyframes float2 {
+  0% {
+    opacity: 1;
+    left: 70%;
+  }
+  26% {
+    opacity: 1;
+    left: 110%;
+  }
+  27% {
+    opacity: 0;
+  }
+  28% {
+    opacity: 0;
+    left: -10%;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    left: 70%;
   }
 }
 
