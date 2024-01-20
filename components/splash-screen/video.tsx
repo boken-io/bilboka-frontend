@@ -1,0 +1,34 @@
+import React from 'react';
+import Buttons from './buttons';
+import { auth } from '@/app/auth';
+
+export default async function Video() {
+  const session = await auth();
+  const user = session?.user;
+
+  return (
+    <div className="fixed w-full h-full">
+      <video
+        className="object-cover absolute w-full h-full"
+        autoPlay
+        playsInline
+        loop
+        muted
+        style={{
+          filter: 'grayscale(100%) contrast(140%) brightness(90%)',
+          transform: 'scale(1.25) translateX(-10px)'
+        }}
+        src="/video/woods.mp4"
+      />
+      <div className="grid gap-4 content-center min-h-screen bg-gradient-to-t from-slate-400 dark:from-slate-800 to-70%">
+        <h1
+          className="font-bold text-white text-center text-7xl lg:text-9xl xl:text-9xl 2xl:text-9xl"
+          style={{ mixBlendMode: 'difference', color: '#fff' }}
+        >
+          Bilboken
+        </h1>
+        <Buttons user={user} />
+      </div>
+    </div>
+  );
+}
