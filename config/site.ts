@@ -3,12 +3,7 @@ export type SiteConfig = typeof siteConfig;
 export const siteConfig = {
   name: 'Bilboken',
   description: 'Administrer drivstoff-priser',
-  homeNavItems: [
-    {
-      label: 'Mine biler',
-      href: '/vehicles'
-    }
-  ],
+  protectedRoutes: ['/vehicles', '/stats'],
   navItems: [
     {
       label: 'Mine biler',
