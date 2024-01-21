@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   icons: {
     icon: '/icon?<generated>',
     shortcut: '/icon?<generated>',
-    apple: '/icon?<generated>'
+    apple: '/apple-icon?<generated>'
   }
 };
 
