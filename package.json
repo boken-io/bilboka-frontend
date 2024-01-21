@@ -34,7 +34,6 @@
     "js-cookie": "^3.0.5",
     "next": "^14.0.*",
     "next-auth": "^5.0.0-beta.4",
-    "next-ssl-redirect-middleware": "^0.1.5",
     "next-themes": "^0.2.1",
     "postcss": "^8.4.31",
     "prettier": "^3.0.3",

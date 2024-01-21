@@ -1,5 +1,3 @@
-import sslRedirect from 'next-ssl-redirect-middleware';
-
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import { siteConfig } from '@/config/site';
