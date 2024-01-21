@@ -8,7 +8,7 @@ export const Logo: React.FC<IconSvgProps> = ({
   ...props
 }) => (
   <svg
-    fill="none"
+    fill="currentColor"
     height={size || height}
     viewBox="0 0 512 512"
     width={size || width}
@@ -22,9 +22,6 @@ export const Logo: React.FC<IconSvgProps> = ({
 			c-9.161 0-16.588 7.427-16.588 16.588c0 9.161 7.427 16.588 16.588 16.588H293.6c120.427 0 218.399-97.974 218.399-218.399
 			S414.026 37.6 293.6 37.6z M293.6 441.223c-102.132 0-185.222-83.09-185.222-185.223S191.468 70.777 293.6 70.777
 			s185.222 83.09 185.222 185.222S395.733 441.223 293.6 441.223z"
-      clipRule="evenodd"
-      fill="currentColor"
-      fillRule="evenodd"
     />
     <path
       d="M293.6 120.507c-74.711 0-135.493 60.782-135.493 135.493c0 44.553 21.619 84.15 54.915 108.86
@@ -40,9 +37,6 @@ export const Logo: React.FC<IconSvgProps> = ({
 			s13.313-1.181 19.379-3.329l26.536 36.522C325.699 354.383 310.101 358.315 293.6 358.315z M366.332 327.886l-26.53-36.515
 			c7.53-9.813 12.02-22.075 12.02-35.371c0-0.491-0.024-0.975-0.038-1.463l42.969-13.962c0.764 5.032 1.162 10.183 1.162 15.425
 			C395.916 283.993 384.612 309.393 366.332 327.886z"
-      clipRule="evenodd"
-      fill="currentColor"
-      fillRule="evenodd"
     />
   </svg>
 );
@@ -208,24 +202,3 @@ export const SearchIcon = (props: IconSvgProps) => (
     />
   </svg>
 );
-
-export const NextUILogo: React.FC<IconSvgProps> = (props) => {
-  const { width, height = 40 } = props;
-
-  return (
-    <svg
-      fill="none"
-      height={height}
-      viewBox="0 0 161 32"
-      width={width}
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
-      <path
-        className="_sw2"
-        fill="transparent"
-        d="M13.110386742269384 40.36424575954043 L498.8896132577306 40.36424575954043 L498.8896132577306 454.7926186523256 L13.110386742269384 454.7926186523256Z"
-      ></path>
-    </svg>
-  );
-};
