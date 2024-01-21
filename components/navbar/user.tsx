@@ -18,7 +18,7 @@ export default function User({ user }: { user: any }) {
       <Menu as="div" className="relative ml-3">
         <div>
           <Menu.Button
-            className="flex rounded-full bg-white text-sm focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2"
+            className="flex rounded-full bg-white dark:bg-black text-sm focus:outline-none "
             onClick={() => !user && router.push('?login=true')}
           >
             <div className="grid grid-flow-col auto-cols-max gap-4">
