@@ -1,3 +1,5 @@
+import sslRedirect from 'next-ssl-redirect-middleware';
+
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import { siteConfig } from '@/config/site';
@@ -6,7 +8,14 @@ import { auth } from '@/app/auth';
 export async function middleware(request: NextRequest) {
   const url = request.nextUrl.clone();
 
-  // if logged in, redirect to /vehicles
+  if (notSslInProduction(request)) {
+    return NextResponse.redirect(
+      `https://${request.headers.get('host')}${request.nextUrl.pathname}`,
+      301
+    );
+  }
+
+  // if logged in and on homepage, redirect to /vehicles
   if (request.nextUrl.pathname === '/') {
     const user = (await auth())?.user;
     url.pathname = '/vehicles';
@@ -22,4 +31,11 @@ export async function middleware(request: NextRequest) {
 
   // else continue
   return NextResponse.next();
+}
+function notSslInProduction(request: NextRequest) {
+  const currentEnv = process.env.NODE_ENV;
+  return (
+    currentEnv === 'production' &&
+    request.headers.get('x-forwarded-proto') !== 'https'
+  );
 }
