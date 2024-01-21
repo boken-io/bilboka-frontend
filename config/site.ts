@@ -25,7 +25,7 @@ export const siteConfig = {
     },
     {
       label: 'Logg ut',
-      href: '/logout',
+      href: '/api/auth/signout',
       color: 'danger'
     }
   ],
