@@ -34,7 +34,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="h-full" suppressHydrationWarning>
-      <head />
+      <head>
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta
+          name="apple-mobile-web-app-status-bar-style"
+          content="black-translucent"
+        />
+        <meta name="apple-mobile-web-app-title" content={siteConfig.name} />
+      </head>
       <body
         className={clsx(
           'h-full bg-slate-50 dark:bg-[#0d1117] min-h-screen font-sans antialiased',
