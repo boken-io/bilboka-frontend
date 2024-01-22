@@ -41,10 +41,7 @@ export default function RootLayout({
     <html lang="en" className="h-full" suppressHydrationWarning>
       <head>
         <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta
-          name="apple-mobile-web-app-status-bar-style"
-          content="black-translucent"
-        />
+
         <meta name="apple-mobile-web-app-title" content={siteConfig.name} />
       </head>
       <body
