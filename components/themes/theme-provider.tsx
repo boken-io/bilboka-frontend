@@ -13,6 +13,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
         enableSystem
         themeColor={{ dark: '#030507', light: '#fdfdfe' }}
       >
+        {/* TODO: fetch dynamically */}
         {children}
       </NextThemesProvider>
     </NextUIProvider>
