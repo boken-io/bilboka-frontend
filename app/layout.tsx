@@ -19,9 +19,9 @@ export const metadata: Metadata = {
 
   description: siteConfig.description,
   icons: {
-    icon: '/icon?<generated>',
-    shortcut: '/icon?<generated>',
-    apple: '/apple-icon?<generated>'
+    icon: '/media/icon?<generated>',
+    shortcut: '/media/icon?<generated>',
+    apple: '/media/apple-icon?<generated>'
   }
 };
 
