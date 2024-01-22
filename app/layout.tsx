@@ -11,13 +11,6 @@ import { fontSans } from '@/config/fonts';
 import Nav from '../components/navbar/nav';
 import type { Viewport } from 'next';
 
-export const viewport: Viewport = {
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#fdfdfe' },
-    { media: '(prefers-color-scheme: dark)', color: '#040507' }
-  ]
-};
-
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
