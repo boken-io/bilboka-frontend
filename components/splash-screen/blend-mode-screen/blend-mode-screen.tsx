@@ -17,7 +17,7 @@ export default async function BlendMode() {
         style={{
           filter: 'grayscale(100%) contrast(140%) brightness(90%)'
         }}
-        src="/video/pov.webm"
+        src="/video/highway2.webm"
       />
 
       {/* name */}
