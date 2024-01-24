@@ -16,6 +16,7 @@
   "dependencies": {
     "@chakra-ui/next-js": "^2.2.0",
     "@chakra-ui/react": "^2.8.2",
+    "@ducanh2912/next-pwa": "^10.2.2",
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
     "@headlessui/react": "^1.7.17",
@@ -34,7 +35,6 @@
     "js-cookie": "^3.0.5",
     "next": "^14.0.*",
     "next-auth": "^5.0.0-beta.4",
-    "next-pwa": "^5.6.0",
     "next-themes": "^1.0.0-beta.0",
     "postcss": "^8.4.31",
     "prettier": "^3.0.3",
@@ -53,6 +53,7 @@
     "trailingComma": "none"
   },
   "devDependencies": {
-    "mini-css-extract-plugin": "^2.7.6"
+    "mini-css-extract-plugin": "^2.7.6",
+    "webpack": "^5.90.0"
   }
 }

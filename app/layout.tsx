@@ -17,11 +17,18 @@ export const metadata: Metadata = {
     template: `%s - ${siteConfig.name}`
   },
 
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: siteConfig.name
+    // startUpImage: [],
+  },
+
   description: siteConfig.description,
   icons: {
-    icon: '/media/icon?<generated>',
-    shortcut: '/media/icon?<generated>',
-    apple: '/media/apple-icon?<generated>'
+    icon: '/media/icon',
+    shortcut: '/media/icon',
+    apple: '/media/apple-icon'
   }
 };
 
@@ -32,11 +39,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="h-full" suppressHydrationWarning>
-      <head>
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-
-        <meta name="apple-mobile-web-app-title" content={siteConfig.name} />
-      </head>
+      <head />
       <body
         className={clsx(
           'h-full bg-slate-50 dark:bg-[#0d1117] min-h-screen font-sans antialiased',

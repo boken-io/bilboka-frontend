@@ -1,16 +1,20 @@
-/** @type {import('next').NextConfig} */
-
-const runtimeCaching = require('next-pwa/cache');
-const withPWA = require("next-pwa")({
+const withPWA = require("@ducanh2912/next-pwa").default({
   dest: "public",
+  disable: process.env.NODE_ENV !== "production",
   register: true,
   skipWaiting: true,
-  disable: process.env.NODE_ENV !== "production",
-  runtimeCaching
+  extendDefaultRuntimeCaching: true,
+    cacheOnFrontEndNav: true,
+  aggressiveFrontEndNavCaching: true,
+  workboxOptions: {
+    runtimeCaching: [
+      // Your runtimeCaching array
+    ],
+  },
+
 });
 
-
-const nextConfig = withPWA({
+module.exports = withPWA({
   reactStrictMode: true,
   swcMinify: true,
   images: {
@@ -30,5 +34,3 @@ const nextConfig = withPWA({
     ]
   }
 });
-
-module.exports = nextConfig;
