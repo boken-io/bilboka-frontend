@@ -2,15 +2,13 @@ import { ImageResponse } from 'next/og';
 import { Logo } from '@/components/icons/icons';
 
 export const runtime = 'edge';
-
-export const size = {
-  width: 32,
-  height: 32,
-  padding: 5
-};
 export const contentType = 'image/png';
 
-export default function Icon() {
+export default function Splash({
+  params
+}: {
+  params: { height: number; width: number };
+}) {
   return new ImageResponse(
     (
       <div
@@ -18,17 +16,20 @@ export default function Icon() {
           width: '100%',
           height: '100%',
           backgroundImage:
-            'linear-gradient(to right top, #041329, #002d46, #00484c, #006036, #527209)',
+            'linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center'
         }}
       >
-        <Logo fill="white" size={size.height - size.padding} />
+        <Logo fill="white" size={params.width * 0.4} />
       </div>
     ),
     {
-      ...size
+      ...{
+        width: params.width,
+        height: params.height
+      }
     }
   );
 }

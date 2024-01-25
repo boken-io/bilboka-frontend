@@ -24,11 +24,7 @@ export default function Icon() {
           justifyContent: 'center'
         }}
       >
-        <Logo
-          fill="white"
-          height={size.height - size.padding}
-          width={size.width - size.padding}
-        />
+        <Logo fill="white" size={size.height - size.padding} />
       </div>
     ),
     {
