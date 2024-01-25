@@ -39,7 +39,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="h-full" suppressHydrationWarning>
-      <head />
+      <head>
+        {siteConfig.resolutions.map((item, index) => (
+          <link
+            key={index}
+            rel="apple-touch-startup-image"
+            media={`screen and (device-width: ${item.width}px) and (device-height: ${item.height}px) and (-webkit-device-pixel-ratio: ${item.ratio}) and (orientation: ${item.orientation})`}
+            href={`/media/${item.width * item.ratio}/${
+              item.height * item.ratio
+            }/apple-icon`}
+          />
+        ))}
+      </head>
       <body
         className={clsx(
           'h-full bg-slate-50 dark:bg-[#0d1117] min-h-screen font-sans antialiased',
