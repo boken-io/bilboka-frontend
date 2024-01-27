@@ -18,7 +18,11 @@ export default async function Page({
   const showModal = searchParams?.modal;
   await CheckIfAuthenticated();
 
-  const vehicle = (await Get(Resource.Vehicles, params.vehicle)) as Vehicle;
+  const vehicle = (await Get(
+    Resource.Vehicles,
+    undefined,
+    params.vehicle
+  )) as Vehicle;
 
   return (
     <main className="p-4 md:p-10 mx-auto max-w-7xl">
