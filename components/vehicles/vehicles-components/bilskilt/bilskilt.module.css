@@ -1,0 +1,38 @@
+.bilskilt {
+  font-family: 'LFT Etica', 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+  line-height: 1.4;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: inline-block;
+  background-color: black;
+  color: black;
+  height: 46px;
+  min-width: 220px;
+  width: 220px;
+  font-size: 36px;
+  border-radius: 4px;
+}
+
+.kjennemerke {
+  text-align: center;
+  margin-top: 2px;
+  height: 42px;
+  width: 197px;
+  margin-right: 2px;
+  float: right;
+  background-color: white;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  line-height: 44px;
+}
+
+.flagg {
+  margin-top: 2px;
+  height: 42px;
+  width: 19px;
+  margin-left: 2px;
+  float: left;
+  background-color: #039;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}

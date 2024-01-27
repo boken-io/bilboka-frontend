@@ -3,6 +3,7 @@ import { Vehicles } from '@/lib/vehicles/model';
 import { Get, Resource } from '@/lib/vehicles/callout';
 import { User } from 'next-auth';
 import VehiclePreview from './vehicles-components/vehicle-preview/vehicle-preview';
+import BilskiltPage from './vehicles-components/bilskilt/bilskilt';
 
 export default async function Vehicles({ user }: { user?: User }) {
   const vehicles = (await Get(Resource.Vehicles, user)) as Vehicles;
@@ -17,7 +18,7 @@ export default async function Vehicles({ user }: { user?: User }) {
         >
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <Text>{vehicle.tegnkombinasjon}</Text>
+              <BilskiltPage>{vehicle.tegnkombinasjon}</BilskiltPage>
               <Metric>{vehicle.name}</Metric>
             </div>
             <div className="grow justify-self-end">
