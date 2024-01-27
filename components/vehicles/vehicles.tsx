@@ -1,8 +1,8 @@
 import { Metric, Text } from '@tremor/react';
 import { Vehicles } from '@/lib/vehicles/model';
-import Image from 'next/image';
 import { Get, Resource } from '@/lib/vehicles/callout';
 import { User } from 'next-auth';
+import VehiclePreview from './vehicles-components/vehicle-preview/vehicle-preview';
 
 export default async function Vehicles({ user }: { user?: User }) {
   const vehicles = (await Get(Resource.Vehicles, user)) as Vehicles;
@@ -21,18 +21,10 @@ export default async function Vehicles({ user }: { user?: User }) {
               <Metric>{vehicle.name}</Metric>
             </div>
             <div className="grow justify-self-end">
-              <div>
-                {/* make headlights go on in dark mode */}
-                <Image
-                  src={`/vehicles/volvo/${vehicle.id}.webp`}
-                  width="100"
-                  height="100"
-                  alt="Vehicle"
-                />
-              </div>
+              <VehiclePreview vehicle={vehicle} />
             </div>
             <div className="justify-self-start">
-              <Metric>{vehicle.tankVolume}</Metric>
+              <Metric>{vehicle.tankVolume || 0}</Metric>
               <Text>{vehicle.odometerUnit}</Text>
             </div>
           </div>
