@@ -3,7 +3,11 @@ import { Entries } from '@/lib/vehicles/model';
 import { Get, Resource } from '@/lib/vehicles/callout';
 
 export default async function Entries({ vehicleId }: { vehicleId: string }) {
-  const entries = (await Get(Resource.Entries, vehicleId)) as Entries;
+  const entries = (await Get(
+    Resource.Entries,
+    undefined,
+    vehicleId
+  )) as Entries;
 
   return (
     <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
