@@ -6,6 +6,7 @@ export default function UnauthorizedPage({ error }: { error: string }) {
   return (
     <div className="background w-full h-full fixed">
       <Image
+        className="scale-110"
         src="/garage/garage.jpg"
         layout="fill"
         priority={true}
@@ -15,6 +16,7 @@ export default function UnauthorizedPage({ error }: { error: string }) {
       <div className="frame-top" />
       <div className="frame">
         <div className="shutter" />
+        <NeonPage />
       </div>
     </div>
   );
