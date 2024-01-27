@@ -1,11 +1,13 @@
 import { notFound } from 'next/navigation';
 import crypto, { KeyObject } from 'crypto';
 import { User } from 'next-auth';
+import { Unauthorized } from './unauthorized';
 
 export { Get, Resource };
 
 enum Resource {
   Vehicles = 'vehicles',
+  Vehicle = 'vehicles',
   Entries = 'entries',
   Datapoints = 'datapoints'
 }
@@ -31,6 +33,9 @@ async function doCallout(resource: Resource, vehicleId?: string, user?: User) {
   if (!response.ok) {
     if (response.status === 404) {
       return notFound();
+    }
+    if (response.status === 401) {
+      throw new Unauthorized();
     }
     return Promise.reject(`HTTP error! status: ${response.status}`);
   }
@@ -58,15 +63,16 @@ function UseSample(): string {
 }
 
 function GetPath(resource: Resource, vehicleId?: string): string {
+  if (resource !== Resource.Vehicles && !vehicleId) {
+    throw new Error('Vehicle ID is missing');
+  }
+
   switch (resource) {
     case Resource.Vehicles:
-      return vehicleId
-        ? `vehicles/${vehicleId}/${UseSample()}`
-        : `vehicles/${UseSample()}`;
+      return `vehicles/${UseSample()}`;
+    case Resource.Vehicle:
+      return `vehicles/${vehicleId}/${UseSample()}`;
     case Resource.Entries:
-      if (!vehicleId) {
-        throw new Error('Vehicle ID is missing');
-      }
       return `vehicles/${vehicleId}/entries/${UseSample()}`;
     default:
       throw new Error('Invalid resource');

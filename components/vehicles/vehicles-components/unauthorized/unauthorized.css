@@ -1,0 +1,125 @@
+.background {
+  /* fallback */
+  background:
+    linear-gradient(
+      135deg,
+      #4f2727 21px,
+      #37403b 22px,
+      #d7c5c3 24px,
+      transparent 24px,
+      transparent 67px,
+      #37403b 67px,
+      #d7c5c3 69px,
+      transparent 69px
+    ),
+    linear-gradient(
+        225deg,
+        #4f2727 21px,
+        #d7c5c3 22px,
+        #d7c5c3 24px,
+        transparent 24px,
+        transparent 67px,
+        #d7c5c3 67px,
+        #d7c5c3 69px,
+        transparent 69px
+      )
+      0 64px;
+  background-color: #4f2727;
+  background-size: 64px 128px;
+  overflow: hidden;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                    door                                    */
+/* -------------------------------------------------------------------------- */
+
+/* top */
+.frame-top {
+  margin: 10vh auto 0;
+
+  width: 80vw;
+  z-index: 120;
+  position: relative;
+  height: 5vh;
+  content: ' ';
+  background: linear-gradient(
+    to right,
+    rgba(76, 76, 76, 1) 0%,
+    rgba(89, 89, 89, 1) 25%,
+    rgba(102, 102, 102, 1) 50%,
+    rgba(71, 71, 71, 1) 75%,
+    rgba(44, 44, 44, 1) 100%
+  );
+  transform: scale(1.05);
+  box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 2.5px;
+  display: block;
+}
+
+.frame {
+  margin: 0 auto 0;
+  height: 100vh;
+  width: 80vw;
+  z-index: 100;
+  overflow: hidden;
+  position: relative;
+  background: black;
+}
+
+/* left and right side */
+.frame:before,
+.frame:after {
+  z-index: 100;
+  content: ' ';
+  position: relative;
+  width: 10px;
+  height: 100vh;
+  background: linear-gradient(
+    to right,
+    rgba(76, 76, 76, 1) 0%,
+    rgba(89, 89, 89, 1) 25%,
+    rgba(102, 102, 102, 1) 50%,
+    rgba(71, 71, 71, 1) 75%,
+    rgba(44, 44, 44, 1) 100%
+  );
+  display: block;
+  overflow: hidden;
+}
+/* left */
+.frame:before {
+  display: inline-block;
+  width: 10px;
+}
+/* right */
+.frame:after {
+  float: right;
+  box-shadow: -2.5px 7.5px 5px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                   shutter                                  */
+/* -------------------------------------------------------------------------- */
+.shutter {
+  position: absolute;
+  width: 80vw;
+  height: 85vh;
+  bottom: 90vh;
+  margin: -10px auto 0;
+  box-shadow: -5px 10px 5px 2.5px rgba(0, 0, 0, 0.15);
+  background: repeating-linear-gradient(to bottom, #232526, #414345 10px);
+  z-index: 50;
+  /* animation: 3s ease-in-out 0s 1 portOpenBefore; */
+  display: block;
+}
+
+@keyframes portOpenBefore {
+  0% {
+    bottom: 21vh;
+  }
+  20% {
+    bottom: 21vh;
+  }
+  100% {
+    bottom: 90vh;
+  }
+}

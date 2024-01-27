@@ -19,7 +19,7 @@ export default async function Page({
   await CheckIfAuthenticated();
 
   const vehicle = (await Get(
-    Resource.Vehicles,
+    Resource.Vehicle,
     undefined,
     params.vehicle
   )) as Vehicle;
