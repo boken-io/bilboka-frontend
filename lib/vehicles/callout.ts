@@ -1,4 +1,6 @@
 import { notFound } from 'next/navigation';
+import crypto, { KeyObject } from 'crypto';
+import { User } from 'next-auth';
 
 export { Get, Resource };
 
@@ -8,16 +10,21 @@ enum Resource {
   Datapoints = 'datapoints'
 }
 
-async function Get(resource: Resource, vehicleId?: string): Promise<any> {
-  const response = await doCallout(resource, vehicleId);
+async function Get(
+  resource: Resource,
+  user?: User,
+  vehicleId?: string
+): Promise<any> {
+  const response = await doCallout(resource, vehicleId, user);
   return await response.json();
 }
 
-async function doCallout(resource: Resource, vehicleId?: string) {
+async function doCallout(resource: Resource, vehicleId?: string, user?: User) {
   const response = await fetch(GetUrl(resource, vehicleId), {
     method: 'GET',
     headers: {
-      'content-type': 'application/json;charset=UTF-8'
+      'content-type': 'application/json;charset=UTF-8',
+      'x-api-key': getToken(user)
     }
   });
 
@@ -64,4 +71,20 @@ function GetPath(resource: Resource, vehicleId?: string): string {
     default:
       throw new Error('Invalid resource');
   }
+}
+function getToken(user?: User) {
+  const public_key = Buffer.from(
+    process.env.API_PUBLIC_KEY ?? '',
+    'base64'
+  ).toString('ascii');
+  const email = user?.email ?? '';
+
+  const encrypted = crypto.publicEncrypt(
+    {
+      key: public_key,
+      padding: crypto.constants.RSA_PKCS1_OAEP_PADDING
+    },
+    Buffer.from(email)
+  );
+  return encrypted.toString('base64');
 }

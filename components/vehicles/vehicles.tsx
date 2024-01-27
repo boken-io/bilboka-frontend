@@ -2,9 +2,10 @@ import { Metric, Text } from '@tremor/react';
 import { Vehicles } from '@/lib/vehicles/model';
 import Image from 'next/image';
 import { Get, Resource } from '@/lib/vehicles/callout';
+import { User } from 'next-auth';
 
-export default async function Vehicles() {
-  const vehicles = (await Get(Resource.Vehicles)) as Vehicles;
+export default async function Vehicles({ user }: { user?: User }) {
+  const vehicles = (await Get(Resource.Vehicles, user)) as Vehicles;
 
   return (
     <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
