@@ -26,14 +26,13 @@ export default async function Page({
   return (
     <main className="p-4 md:p-10 mx-auto max-w-7xl">
       <div className="grid grid-cols-3 gap-4">
-        <BilskiltPage size={0.5} vehicle={vehicle} />
+        <BilskiltPage size={1} vehicle={vehicle} />
         <Info vehicle={vehicle}></Info>
         <div className="col-span-2">
           <Chart></Chart>
         </div>
         <Entries vehicleId={params.vehicle} user={user}></Entries>
       </div>
-      <RegisterFuelButton searchParams={searchParams} />
     </main>
   );
 }

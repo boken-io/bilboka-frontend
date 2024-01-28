@@ -15,6 +15,7 @@ export default async function Vehicles({ user }: { user?: User }) {
           href={`/vehicles/${vehicle.id}`}
           className="p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-800 rounded-lg shadow-md hover:bg-gray-100 dark:hover:bg-gray-900"
         >
+          {/* TODO: add lazy loading and use next-ui skeleton */}
           <div className="grid grid-cols-2 gap-4">
             <div>
               <Text>{vehicle.tegnkombinasjonVisning}</Text>

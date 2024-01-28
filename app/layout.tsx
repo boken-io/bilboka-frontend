@@ -10,6 +10,7 @@ import { siteConfig } from '@/config/site';
 import { fontSans } from '@/config/fonts';
 import Nav from '../components/navbar/nav';
 import type { Viewport } from 'next';
+import QuickBar from '@/components/quick-bar/quick-bar';
 
 export const metadata: Metadata = {
   title: {
@@ -59,12 +60,13 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <main>
+            {/* TODO: add suspense on children for loading UI */}
             <Suspense>
               <Nav />
             </Suspense>
             <Toaster position="bottom-center" />
             {children}
-            {/* <Toast /> */}
+            <QuickBar />
           </main>
         </ThemeProvider>
       </body>
