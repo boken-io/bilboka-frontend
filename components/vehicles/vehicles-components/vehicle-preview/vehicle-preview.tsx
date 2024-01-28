@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { Vehicle } from '@/lib/vehicles/model';
 import './vehicle-preview.css';
+import defaultVehicle from '@/public/vehicles/generic.webp';
 
 export default function VehiclePreview({ vehicle }: { vehicle: Vehicle }) {
   let images = new Map<string, string>([['KT65881', 'volvo/xc70']]);
@@ -16,6 +17,8 @@ export default function VehiclePreview({ vehicle }: { vehicle: Vehicle }) {
         width="100"
         height="100"
         alt="Vehicle"
+        blurDataURL={defaultVehicle.src}
+        placeholder="blur"
       />
       <div className="headlights z-10 absolute" />
     </>

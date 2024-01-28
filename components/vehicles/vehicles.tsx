@@ -18,15 +18,17 @@ export default async function Vehicles({ user }: { user?: User }) {
         >
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <BilskiltPage>{vehicle.tegnkombinasjon}</BilskiltPage>
               <Metric>{vehicle.name}</Metric>
             </div>
-            <div className="grow justify-self-end">
+            <div className="justify-self-end">
               <VehiclePreview vehicle={vehicle} />
             </div>
             <div className="justify-self-start">
               <Metric>{vehicle.tankVolume || 0}</Metric>
               <Text>{vehicle.odometerUnit}</Text>
+            </div>
+            <div className="justify-self-end">
+              <BilskiltPage size={0.5}>{vehicle.tegnkombinasjon}</BilskiltPage>
             </div>
           </div>
         </a>

@@ -1,16 +1,17 @@
 import styles from './bilskilt.module.css';
 
-export default function BilskiltPage(props: { children: string }) {
-  function addSpacing(tegnkombinasjon: string): string {
-    return [tegnkombinasjon.slice(0, 2), ' ', tegnkombinasjon.slice(2)].join(
-      ''
-    );
+export default function BilskiltPage(props: {
+  children: string;
+  size: number;
+}) {
+  function tegnkombinasjon(): string {
+    return [props.children.slice(0, 2), ' ', props.children.slice(2)].join('');
   }
 
   return (
     <div
       className="dark:brightness-50"
-      style={{ transform: 'scale(0.4)', transformOrigin: 'left' }}
+      style={{ transform: `scale(${props.size})`, transformOrigin: 'right' }}
     >
       <div className={styles.bilskilt}>
         <div className={styles.flagg}>
@@ -18,6 +19,7 @@ export default function BilskiltPage(props: { children: string }) {
             version="1.0"
             viewBox="0 0 213.33 469.33"
             xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="none"
           >
             <rect
               transform="scale(-1,1)"
@@ -73,7 +75,7 @@ export default function BilskiltPage(props: { children: string }) {
             />
           </svg>
         </div>
-        <div className={styles.kjennemerke}>{addSpacing(props.children)}</div>
+        <div className={styles.kjennemerke}>{tegnkombinasjon()}</div>
       </div>
     </div>
   );
