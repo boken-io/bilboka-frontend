@@ -1,13 +1,10 @@
+import { Vehicle } from '@/lib/vehicles/model';
 import styles from './bilskilt.module.css';
 
 export default function BilskiltPage(props: {
-  children: string;
+  vehicle: Vehicle;
   size: number;
 }) {
-  function tegnkombinasjon(): string {
-    return [props.children.slice(0, 2), ' ', props.children.slice(2)].join('');
-  }
-
   return (
     <div
       className="dark:brightness-50"
@@ -75,7 +72,9 @@ export default function BilskiltPage(props: {
             />
           </svg>
         </div>
-        <div className={styles.kjennemerke}>{tegnkombinasjon()}</div>
+        <div className={styles.kjennemerke}>
+          {props.vehicle?.tegnkombinasjonVisning || 'A-1'}
+        </div>
       </div>
     </div>
   );

@@ -12,12 +12,13 @@ export default async function Vehicles({ user }: { user?: User }) {
     <div className="grid grid-cols-1 gap-4  md:grid-cols-2 lg:grid-cols-3">
       {vehicles.map((vehicle) => (
         <a
-          key={vehicle.tegnkombinasjon}
+          key={vehicle.id}
           href={`/vehicles/${vehicle.id}`}
           className="p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-800 rounded-lg shadow-md hover:bg-gray-100 dark:hover:bg-gray-900"
         >
           <div className="grid grid-cols-2 gap-4">
             <div>
+              <Text>{vehicle.tegnkombinasjonVisning}</Text>
               <Metric>{vehicle.name}</Metric>
             </div>
             <div className="justify-self-end">
@@ -26,9 +27,6 @@ export default async function Vehicles({ user }: { user?: User }) {
             <div className="justify-self-start">
               <Metric>{vehicle.tankVolume || 0}</Metric>
               <Text>{vehicle.odometerUnit}</Text>
-            </div>
-            <div className="justify-self-end">
-              <BilskiltPage size={0.5}>{vehicle.tegnkombinasjon}</BilskiltPage>
             </div>
           </div>
         </a>

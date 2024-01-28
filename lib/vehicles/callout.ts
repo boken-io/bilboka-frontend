@@ -6,10 +6,10 @@ import { Unauthorized } from './unauthorized-exception';
 export { Get, Resource };
 
 enum Resource {
-  Vehicles = 'vehicles',
-  Vehicle = 'vehicles',
-  Entries = 'entries',
-  Datapoints = 'datapoints'
+  Vehicles,
+  Vehicle,
+  Entries,
+  Datapoints
 }
 
 async function Get(
@@ -17,7 +17,7 @@ async function Get(
   user?: User,
   vehicleId?: string
 ): Promise<any> {
-  const response = await doCallout(resource, vehicleId, user);
+  const response = await doCallout(resource, vehicleId, user); // TODO fix order of params
   return await response.json();
 }
 
@@ -37,6 +37,7 @@ async function doCallout(resource: Resource, vehicleId?: string, user?: User) {
     if (response.status === 401) {
       throw new Error(`vehicle #${vehicleId}`);
     }
+    // TODO add switch
     return Promise.reject(`HTTP error! status: ${response.status}`);
   }
 
@@ -47,15 +48,11 @@ function GetUrl(
   resource: Resource,
   vehicleId: string | undefined
 ): import('undici-types').RequestInfo {
-  return `${GetDomain()}/${GetPath(resource, vehicleId)}`;
+  return `${GetDomain()}/${GetPath(resource, vehicleId)}/${UseSample()}`;
 }
 
 function GetDomain(): string {
-  const apiUrl = process.env.BILBOKEN_API_URL ?? '';
-  if (!apiUrl) {
-    throw new Error('API URL is empty or null');
-  }
-  return apiUrl;
+  return process.env.BILBOKEN_API_URL ?? throwError('API URL is empty or null');
 }
 
 function UseSample(): string {
@@ -69,11 +66,11 @@ function GetPath(resource: Resource, vehicleId?: string): string {
 
   switch (resource) {
     case Resource.Vehicles:
-      return `vehicles/${UseSample()}`;
+      return `vehicles`;
     case Resource.Vehicle:
-      return `vehicles/${vehicleId}/${UseSample()}`;
+      return `vehicles/${vehicleId}`;
     case Resource.Entries:
-      return `vehicles/${vehicleId}/entries/${UseSample()}`;
+      return `vehicles/${vehicleId}/entries`;
     default:
       throw new Error('Invalid resource');
   }
@@ -94,4 +91,8 @@ function getToken(user?: User) {
   );
 
   return encrypted.toString('base64');
+}
+
+function throwError(errorMessage: string): string {
+  throw new Error(errorMessage);
 }

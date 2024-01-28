@@ -7,7 +7,8 @@ type Datapoints = Datapoint[];
 interface Vehicle {
   id: string;
   name: string;
-  tegnkombinasjon: string;
+  tegnkombinasjonNormalisert: string;
+  tegnkombinasjonVisning: string;
   odometerUnit: string;
   fuelType: string;
   tankVolume: number;
