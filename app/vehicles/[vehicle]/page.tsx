@@ -16,11 +16,11 @@ export default async function Page({
   searchParams: { modal: string };
 }) {
   const showModal = searchParams?.modal;
-  await CheckIfAuthenticated();
+  const user = await CheckIfAuthenticated();
 
   const vehicle = (await Get(
     Resource.Vehicle,
-    undefined,
+    user,
     params.vehicle
   )) as Vehicle;
 
@@ -31,7 +31,7 @@ export default async function Page({
         <div className="col-span-2">
           <Chart></Chart>
         </div>
-        <Entries vehicleId={params.vehicle}></Entries>
+        <Entries vehicleId={params.vehicle} user={user}></Entries>
       </div>
 
       {/* TODO separate component */}
