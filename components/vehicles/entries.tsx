@@ -8,7 +8,7 @@ export default async function Entries({
   user
 }: {
   vehicleId: string;
-  user: User;
+  user?: User;
 }) {
   const entries = (await Get(Resource.Entries, user, vehicleId)) as Entries;
 

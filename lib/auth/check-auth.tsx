@@ -7,5 +7,5 @@ export default async function CheckIfAuthenticated() {
     return redirect('/');
   }
 
-  return session?.user;
+  return session.user;
 }

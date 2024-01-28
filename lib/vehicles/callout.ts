@@ -22,16 +22,6 @@ async function Get(
 }
 
 async function doCallout(resource: Resource, vehicleId?: string, user?: User) {
-  console.log('');
-  console.log('');
-  console.log('');
-  console.log(user?.email);
-
-  console.log(getToken(user));
-  console.log('');
-  console.log('');
-  console.log('');
-
   const response = await fetch(GetUrl(resource, vehicleId), {
     method: 'GET',
     headers: {
