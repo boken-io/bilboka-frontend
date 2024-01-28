@@ -1,19 +1,26 @@
 import Image from 'next/image';
 import './neon.css';
+import wall_inside from '@/public/garage/wall_inside.jpg';
 
-export default function NeonPage() {
+export default function NeonPage({ error }: { error: string }) {
   return (
-    <div className="neon w-fit h-fit">
+    <div className="w-fit h-fit">
       <Image
-        src="/garage/garage.jpg"
-        layout="fill"
+        className="image"
+        src={wall_inside}
         priority={true}
         quality={80}
+        sizes="100vw"
+        fill={true}
         alt={'garage wall'}
+        style={{ objectPosition: 'bottom', objectFit: 'contain' }}
       />
-      <div className="logo">
-        <b>
-          d<span>ri</span>bb<span>b</span>le
+      <div className="logo grid justify-items-center content-center min-h-screen">
+        <b className="neon">
+          <span className="text-9xl">{error}</span>
+          <p className="text-7xl">
+            Car is out <span className="disabled">/ in</span>
+          </p>
         </b>
       </div>
     </div>

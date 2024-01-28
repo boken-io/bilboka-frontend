@@ -27,6 +27,13 @@
   background-color: #4f2727;
   background-size: 64px 128px;
   overflow: hidden;
+  filter: brightness(0.8);
+  transition: filter 0.5s ease-in-out;
+}
+
+.dark .background {
+  filter: brightness(0.5);
+  transition: filter 0.5s ease-in-out;
 }
 
 /* -------------------------------------------------------------------------- */

@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import crypto, { KeyObject } from 'crypto';
 import { User } from 'next-auth';
-import { Unauthorized } from './unauthorized';
+import { Unauthorized } from './unauthorized-exception';
 
 export { Get, Resource };
 
@@ -35,7 +35,7 @@ async function doCallout(resource: Resource, vehicleId?: string, user?: User) {
       return notFound();
     }
     if (response.status === 401) {
-      throw new Unauthorized();
+      throw new Error(`vehicle #${vehicleId}`);
     }
     return Promise.reject(`HTTP error! status: ${response.status}`);
   }
