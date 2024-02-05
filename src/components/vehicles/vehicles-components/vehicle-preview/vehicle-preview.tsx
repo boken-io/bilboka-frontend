@@ -12,7 +12,7 @@ export default function VehiclePreview({ vehicle }: { vehicle: Vehicle }) {
   return (
     <>
       <Image
-        src={`/vehicles/${getImage(vehicle.tegnkombinasjon)}.webp`}
+        src={`/vehicles/${getImage(vehicle.tegnkombinasjonNormalisert)}.webp`}
         className="dark:brightness-75"
         width="100"
         height="100"

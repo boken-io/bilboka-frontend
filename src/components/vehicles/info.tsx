@@ -3,8 +3,8 @@ import { Vehicle } from '@/lib/vehicles/model';
 
 export default function Info({ vehicle }: { vehicle: Vehicle }) {
   return (
-    <Card key={vehicle.tegnkombinasjon}>
-      <Title>{vehicle.tegnkombinasjon}</Title>
+    <Card key={vehicle.tegnkombinasjonNormalisert}>
+      <Title>{vehicle.tegnkombinasjonNormalisert}</Title>
       <Flex justifyContent="start" alignItems="baseline" className="space-x-2">
         <Metric>{vehicle.name}</Metric>
       </Flex>
