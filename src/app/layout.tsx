@@ -64,11 +64,11 @@ export default function RootLayout({
             {/* TODO: add suspense on children for loading UI */}
             <Suspense>
               <Nav />
+              <ModalHandler />
             </Suspense>
             <Toaster position="bottom-center" />
             {children}
             <QuickBar />
-            <ModalHandler />
           </main>
         </ThemeProvider>
       </body>
