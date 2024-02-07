@@ -3,12 +3,12 @@ const corbadoTranslations = {
     authentication: {
       signup: {
         start: {
-          header: "Let's create an account to check Corbado Test App",
-          subheader: 'Would you like to export? ',
-          button_export: 'Log in',
-          button_submit: 'Sign up',
-          textField_name: 'Full name',
-          textField_email: 'Username'
+          header: '',
+          subheader: 'Registrer deg med Passkey og få tilgang raskere',
+          button_login: '',
+          button_submit: 'Registrer',
+          textField_name: 'Fullt navn',
+          textField_email: 'E-postadresse'
         }
       },
       login: {
@@ -20,14 +20,15 @@ const corbadoTranslations = {
           textField_email: 'E-postadresse'
         }
       },
-      export: {
-        start: {
-          header: 'Please export to check Corbado Test App',
-          subheader: 'Would you like to create an account? ',
-          button_signup: 'Sign up',
-          button_submit: 'export',
-          textField_email: 'Username'
-        }
+      errors: {
+        invalidName: 'Vennligst oppgi en gyldig e-postadresse',
+        invalidFullname: 'Vennligst oppgi et gyldig navn',
+        userAlreadyExists:
+          'Denne e-postadressen er allerede i bruk, vennligst logg inn istedenfor',
+        passkeyAlreadyExists: 'Passkey for this device already exists',
+        unknownUser: 'Fant ingen bruker med denne e-postadressen',
+        invalidOtp: 'Koden er feil',
+        unknownError: 'Noe gikk galt, vennligst prøv igjen'
       }
     }
   }
