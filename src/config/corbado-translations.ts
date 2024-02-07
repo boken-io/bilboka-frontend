@@ -4,17 +4,39 @@ const corbadoTranslations = {
       signup: {
         start: {
           header: '',
-          subheader: 'Registrer deg med Passkey og få tilgang raskere',
+          subheader: 'Registrer deg her',
           button_login: '',
           button_submit: 'Registrer',
           textField_name: 'Fullt navn',
           textField_email: 'E-postadresse'
+        },
+        passkeyCreate: {
+          header: 'Sett opp Passkeys',
+          headerButton_showPasskeyBenefits: '',
+          body: 'Kontoen knyttes til ',
+          button_start: 'Lag Passkey',
+          button_switchToAlternate: {
+            emailOtp: 'Send meg kjedelig engangspassord på mail',
+            emailLink: 'Send email magic link'
+          },
+          button_back: 'Tilbake'
+        },
+        passkeySuccess: {
+          header: '',
+          subheader: 'Konto opprettet',
+          body_text1: 'Husk å bekreft e-postadressen din',
+          body_text2: {
+            emailOtp: '',
+            emailLink: ''
+          },
+          body_text3: '',
+          button: 'Fortsett'
         }
       },
       login: {
         start: {
           header: '',
-          subheader: 'Logg inn raskere med Passkey',
+          subheader: 'Logg inn her',
           button_signup: '',
           button_submit: 'Logg inn',
           textField_email: 'E-postadresse'
