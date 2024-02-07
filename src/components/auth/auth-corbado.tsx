@@ -4,7 +4,7 @@ import corbadoTranslations from '@/config/corbado-translations';
 import { Login, SignUp } from '@corbado/react';
 import { CorbadoProvider } from '@corbado/react';
 import { useRouter, usePathname } from 'next/navigation';
-import { Tabs, Tab, Card, CardBody, CardHeader } from '@nextui-org/react';
+import { Tabs, Tab } from '@nextui-org/react';
 import React from 'react';
 
 export type Modes = 'login' | 'register';

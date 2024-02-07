@@ -2,21 +2,19 @@
 import {
   Modal,
   ModalContent,
-  ModalHeader,
   ModalBody,
-  ModalFooter,
-  Button,
   useDisclosure
 } from '@nextui-org/react';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import CorbadoLogin, { Modes } from './auth-corbado';
 
 export default function LoginModal(props: { mode: Modes }) {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const router = useRouter();
+  const path = usePathname();
 
   function closeModal() {
-    router.back();
+    router.push(path);
   }
 
   return (
