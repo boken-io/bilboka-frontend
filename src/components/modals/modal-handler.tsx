@@ -1,6 +1,6 @@
 'use client';
 
-import LoginModal from '@/components/auth/login-modal';
+import LoginModal from '@/components/auth/auth-modal';
 import { useSearchParams } from 'next/navigation';
 
 export default function ModalHandler() {
@@ -12,8 +12,8 @@ export default function ModalHandler() {
 
   return (
     <>
-      {show('login') && <LoginModal />}
-      {show('register') && <LoginModal />}
+      {show('login') && <LoginModal mode="login" />}
+      {show('register') && <LoginModal mode="register" />}
     </>
   );
 }

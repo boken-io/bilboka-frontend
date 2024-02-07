@@ -9,9 +9,9 @@ import {
   useDisclosure
 } from '@nextui-org/react';
 import { useRouter } from 'next/navigation';
-import CorbadoLogin from './login-corbado';
+import CorbadoLogin, { Modes } from './auth-corbado';
 
-export default function LoginModal() {
+export default function LoginModal(props: { mode: Modes }) {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const router = useRouter();
 
@@ -30,9 +30,8 @@ export default function LoginModal() {
       <ModalContent>
         {(onClose) => (
           <>
-            <ModalHeader className="flex flex-col gap-1">Logg inn</ModalHeader>
             <ModalBody className="grid justify-center">
-              <CorbadoLogin />
+              <CorbadoLogin mode={props.mode} />
             </ModalBody>
           </>
         )}
