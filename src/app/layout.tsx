@@ -11,6 +11,7 @@ import { fontSans } from '@/config/fonts';
 import Nav from '../components/navbar/nav';
 import type { Viewport } from 'next';
 import QuickBar from '@/components/quick-bar/quick-bar';
+import ModalHandler from '@/components/modals/modal-handler';
 
 export const metadata: Metadata = {
   title: {
@@ -67,6 +68,7 @@ export default function RootLayout({
             <Toaster position="bottom-center" />
             {children}
             <QuickBar />
+            <ModalHandler />
           </main>
         </ThemeProvider>
       </body>

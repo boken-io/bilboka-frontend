@@ -10,6 +10,7 @@ import {
 } from '@nextui-org/react';
 import { useRouter } from 'next/navigation';
 import CorbadoLogin from './login-corbado';
+import CorbadoRegister from './register-corbado';
 
 export default function LoginModal() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
@@ -30,9 +31,9 @@ export default function LoginModal() {
       <ModalContent>
         {(onClose) => (
           <>
-            <ModalHeader className="flex flex-col gap-1">Logg inn</ModalHeader>
+            <ModalHeader className="flex flex-col gap-1">Registrer</ModalHeader>
             <ModalBody className="grid justify-center">
-              <CorbadoLogin />
+              <CorbadoRegister />
             </ModalBody>
           </>
         )}

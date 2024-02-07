@@ -4,14 +4,10 @@ import { Fragment } from 'react';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { signIn, signOut } from 'next-auth/react';
 import Image from 'next/image';
-import LoginModal from '@/components/auth/login-modal';
 import { useRouter } from 'next/navigation';
-import { useSearchParams } from 'next/navigation';
 
 export default function User({ user }: { user: any }) {
   const router = useRouter();
-  const searchParams = useSearchParams();
-  const showLogin = searchParams.get('login') && !user;
 
   return (
     <div className="hidden sm:ml-6 sm:flex sm:items-center">
@@ -62,7 +58,6 @@ export default function User({ user }: { user: any }) {
           </Transition>
         )}
       </Menu>
-      {showLogin && <LoginModal />}
     </div>
   );
 }
