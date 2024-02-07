@@ -32,10 +32,10 @@ export default function CorbadoLogin(props: { mode: Modes }) {
         onSelectionChange={setSelected}
       >
         <Tab key="login" title="Logg inn">
-          <Login onLoggedIn={() => closeModal()} />
+          <Login onLoggedIn={closeModal} />
         </Tab>
         <Tab key="register" title="Registrer">
-          <SignUp onLoggedIn={() => closeModal()} />
+          <SignUp onSignedUp={closeModal} />
         </Tab>
       </Tabs>
     </CorbadoProvider>
