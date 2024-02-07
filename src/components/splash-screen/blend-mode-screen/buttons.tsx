@@ -4,17 +4,31 @@ import { useRouter } from 'next/navigation';
 export default function Buttons({ user }: { user: any }) {
   const router = useRouter();
 
+  // if (user) return '';
+
   return (
-    <>
-      {!user && (
-        <button
-          className="place-self-center bg-white  hover:bg-gray-200 text-black font-bold py-2 px-4 rounded-full shrink flex-none w-36"
-          style={{ mixBlendMode: 'difference' }}
-          onClick={() => router.push('?login=true')}
-        >
-          Logg inn
-        </button>
-      )}
-    </>
+    <div className="grid grid-cols-3 gap-4 place-self-center">
+      <button
+        className="bg-white hover:bg-gray-200 text-black font-bold rounded-full py-2 px-4"
+        style={{ mixBlendMode: 'difference' }}
+        onClick={() => router.push('?login=true')}
+      >
+        Logg inn
+      </button>
+      <button
+        className="bg-white hover:bg-gray-200 text-black font-bold rounded-full py-2 px-4"
+        style={{ mixBlendMode: 'difference' }}
+        onClick={() => router.push('?register=true')}
+      >
+        Registrer
+      </button>
+      <button
+        className="bg-white hover:bg-gray-200 text-black font-bold rounded-full py-2 px-4"
+        style={{ mixBlendMode: 'difference' }}
+        onClick={() => router.push('?sample=true')}
+      >
+        🛞 Prøvekjør
+      </button>
+    </div>
   );
 }
