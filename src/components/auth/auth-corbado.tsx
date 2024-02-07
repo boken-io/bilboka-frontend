@@ -27,6 +27,7 @@ export default function CorbadoLogin(props: { mode: Modes }) {
     >
       <Tabs
         aria-label="Options"
+        className="justify-center mt-4"
         selectedKey={selected}
         onSelectionChange={setSelected}
       >
