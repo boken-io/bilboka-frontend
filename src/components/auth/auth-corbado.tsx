@@ -5,7 +5,7 @@ import { Login, SignUp } from '@corbado/react';
 import { CorbadoProvider } from '@corbado/react';
 import { useRouter, usePathname } from 'next/navigation';
 import { Tabs, Tab } from '@nextui-org/react';
-import React from 'react';
+import React, { Key } from 'react';
 
 export type Modes = 'login' | 'register';
 
@@ -29,7 +29,7 @@ export default function CorbadoLogin(props: { mode: Modes }) {
         aria-label="Options"
         className="justify-center mt-4"
         selectedKey={selected}
-        onSelectionChange={setSelected}
+        onSelectionChange={setSelected as (key: Key) => void}
       >
         <Tab key="login" title="Logg inn">
           <Login onLoggedIn={closeModal} />
