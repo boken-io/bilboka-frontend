@@ -14,7 +14,7 @@ const corbadoTranslations = {
       login: {
         start: {
           header: '',
-          subheader: 'Bruk e-postadressen du registrerte deg med',
+          subheader: 'Logg inn raskere med Passkey',
           button_signup: '',
           button_submit: 'Logg inn',
           textField_email: 'E-postadresse'
