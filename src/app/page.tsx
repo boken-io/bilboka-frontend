@@ -6,8 +6,7 @@ export default async function IndexPage() {
   return (
     <>
       {/* <Valley /> */}
-      {/* <BlendMode /> */}
-      <LoginOptions />
+      <BlendMode />
     </>
   );
 }
