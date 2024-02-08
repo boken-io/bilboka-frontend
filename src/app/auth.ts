@@ -30,7 +30,7 @@ export const {
         console.log('🚀 ~ token:', token);
 
         // Get the JWKS URL from the project ID
-        var issuer = `https://${process.env.NEXT_PUBLIC_CORBADO_PROJECT_ID}.frontendapi.corbado.io`;
+        var issuer = process.env.CORBADO_FRONTEND_API;
         var jwksUrl = issuer + '/.well-known/jwks';
         console.log('🚀 ~ issuer:', issuer);
 
