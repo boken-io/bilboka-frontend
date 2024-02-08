@@ -15,7 +15,9 @@ export default function User({ user }: { user: any }) {
         <div>
           <Menu.Button
             className="flex rounded-full bg-white dark:bg-black text-sm focus:outline-none "
-            onClick={() => !user && router.push('?login=true')}
+            onClick={() =>
+              !user && router.push('?login=true', { scroll: false })
+            }
           >
             <div className="grid grid-flow-col auto-cols-max gap-4">
               <div className="place-self-center">

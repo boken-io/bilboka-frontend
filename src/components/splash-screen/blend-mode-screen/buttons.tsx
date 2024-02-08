@@ -11,21 +11,21 @@ export default function Buttons({ user }: { user: any }) {
       <button
         className="bg-white hover:bg-gray-200 text-black font-bold rounded-full py-2 px-4"
         style={{ mixBlendMode: 'difference' }}
-        onClick={() => router.push('?login=true')}
+        onClick={() => router.push('?login=true', { scroll: false })}
       >
         Logg inn
       </button>
       <button
         className="bg-white hover:bg-gray-200 text-black font-bold rounded-full py-2 px-4"
         style={{ mixBlendMode: 'difference' }}
-        onClick={() => router.push('?register=true')}
+        onClick={() => router.push('?register=true', { scroll: false })}
       >
         Registrer
       </button>
       <button
         className="bg-white hover:bg-gray-200 text-black font-bold rounded-full py-2 px-4"
         style={{ mixBlendMode: 'difference' }}
-        onClick={() => router.push('?sample=true')}
+        onClick={() => router.push('?sample=true', { scroll: false })}
       >
         🛞 Prøvekjør
       </button>

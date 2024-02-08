@@ -7,7 +7,7 @@ import { useRouter, usePathname } from 'next/navigation';
 import { Tabs, Tab } from '@nextui-org/react';
 import React, { Key } from 'react';
 import { signIn } from 'next-auth/react';
-import Image from 'next/image';
+import LoginOptions from './login-options';
 
 export type Modes = 'login' | 'register';
 
@@ -41,6 +41,9 @@ export default function CorbadoLogin(props: { mode: Modes }) {
         </Tab>
         <Tab key="register" title="Registrer">
           <SignUp onSignedUp={closeModal} />
+        </Tab>
+        <Tab key="social" title="Sosial">
+          <LoginOptions />
         </Tab>
       </Tabs>
     </CorbadoProvider>

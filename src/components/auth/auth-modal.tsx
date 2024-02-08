@@ -8,13 +8,13 @@ import {
 import { useRouter, usePathname } from 'next/navigation';
 import CorbadoLogin, { Modes } from './auth-corbado';
 
-export default function LoginModal(props: { mode: Modes }) {
+export default function AuthModal(props: { mode: Modes }) {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const router = useRouter();
   const path = usePathname();
 
   function closeModal() {
-    router.push(path);
+    router.push(path, { scroll: false });
   }
 
   return (
