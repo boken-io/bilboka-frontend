@@ -3,8 +3,8 @@ const corbadoTranslations = {
     authentication: {
       signup: {
         start: {
-          header: '',
-          subheader: 'Registrer deg her',
+          header: 'Lag ny bruker',
+          subheader: '',
           button_login: '',
           button_submit: 'Registrer',
           textField_name: 'Fullt navn',
@@ -35,8 +35,8 @@ const corbadoTranslations = {
       },
       login: {
         start: {
-          header: '',
-          subheader: 'Logg inn her',
+          header: 'Logg inn',
+          subheader: '',
           button_signup: '',
           button_submit: 'Logg inn',
           textField_email: 'E-postadresse'
