@@ -17,8 +17,10 @@ export default async function BlendMode() {
         style={{
           filter: 'grayscale(100%) contrast(140%) brightness(90%)'
         }}
-        src="/video/city.webm"
-      />
+      >
+        <source src="/video/city.webm" type="video/webm" />
+        <source src="/video/city.mp4" type="video/mp4" />
+      </video>
 
       {/* name */}
       <br />
