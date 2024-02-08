@@ -27,7 +27,8 @@ export default function Settings() {
       >
         Innstillinger
       </button>
-      <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
+
+      <Modal isOpen={isOpen} onOpenChange={onOpenChange} placement="center">
         <ModalContent>
           {(onClose) => (
             <>

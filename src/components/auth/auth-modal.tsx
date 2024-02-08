@@ -20,6 +20,7 @@ export default function AuthModal(props: { mode: Modes }) {
   return (
     <Modal
       isOpen={true}
+      placement="center"
       backdrop="blur"
       onOpenChange={onOpenChange}
       onClose={closeModal}
