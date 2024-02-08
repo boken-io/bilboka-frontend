@@ -7,7 +7,7 @@ export default function Buttons({ user }: { user: any }) {
   // if (user) return '';
 
   return (
-    <div className="grid grid-cols-3 gap-4 place-self-center">
+    <div className="grid grid-cols-3 mx-4 gap-4 place-self-center">
       <button
         className="bg-white hover:bg-gray-200 text-black font-bold rounded-full py-2 px-4"
         style={{ mixBlendMode: 'difference' }}
