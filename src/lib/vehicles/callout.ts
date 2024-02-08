@@ -35,7 +35,11 @@ async function doCallout(resource: Resource, vehicleId?: string, user?: User) {
       return notFound();
     }
     if (response.status === 401) {
-      throw new Error(`vehicle #${vehicleId}`);
+      if (resource == Resource.Vehicles) {
+        throw new Error('No cars');
+      } else {
+        throw new Error(`vehicle #${vehicleId}`);
+      }
     }
     // TODO add switch
     return Promise.reject(`HTTP error! status: ${response.status}`);
