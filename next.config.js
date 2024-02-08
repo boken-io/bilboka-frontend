@@ -24,10 +24,6 @@ module.exports = withPWA({
       },
       {
         protocol: 'https',
-        hostname: 'pro-1107665439258796344.frontendapi.corbado.io'
-      },
-      {
-        protocol: 'https',
         hostname: 'platform-lookaside.fbsbx.com'
       },
       {
