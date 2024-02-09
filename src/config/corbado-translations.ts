@@ -11,8 +11,8 @@ const corbadoTranslations = {
           textField_email: 'E-postadresse'
         },
         emailOtp: {
-          header: 'Skriv engangspassord for å opprette bruker',
-          body_text1: 'Du skal ha mottatt en e-post på ',
+          header: 'You got mail!',
+          body_text1: 'Du skal ha mottatt en e-post med engangspassord på ',
           body_text2: '.',
           button_verify: 'Fullfør',
           button_sendOtpAgain: 'Send engangspassord på nytt',
@@ -80,6 +80,14 @@ const corbadoTranslations = {
           button_signup: '',
           button_submit: 'Logg inn',
           textField_email: 'E-postadresse'
+        },
+        emailOtp: {
+          header: 'You got mail!',
+          body_text1: 'Du skal ha mottatt en e-post med engangspassord på ',
+          body_text2: '',
+          button_verify: 'Logg inn',
+          button_sendOtpAgain: 'Send engangspassord på nytt',
+          button_back: 'Avbryt'
         }
       },
       errors: {
@@ -92,7 +100,7 @@ const corbadoTranslations = {
         invalidOtp: 'Koden er feil',
         unknownError: 'Noe gikk galt, vennligst prøv igjen',
         conditionalUiUnconfirmedCredential:
-          'Du har ikke bekreftet din e-postadresse enda.'
+          'Du har ikke bekreftet din e-postadresse enda, vennligst skriv inn e-postadressen manuelt og logg inn.'
       }
     }
   }
