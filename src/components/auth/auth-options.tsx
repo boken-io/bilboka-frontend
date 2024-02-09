@@ -11,7 +11,7 @@ import AuthSocial from './auth-social';
 import { useTheme } from 'next-themes';
 
 import './auth-theme.css';
-import { LoginIcon, RegisterIcon, SocialIcon } from '../icons/icons';
+import { LoginIcon, RegisterIcon, SocialIcon } from '@/components/icons/icons';
 
 export type Modes = 'login' | 'register';
 
@@ -28,20 +28,22 @@ export default function AuthOptions(props: { mode: Modes }) {
   }
 
   function title(type: string): React.ReactNode {
-    let icon;
-    switch (type) {
-      case 'Logg inn':
-        icon = <LoginIcon />;
-      case 'Registrer':
-        icon = <RegisterIcon />;
-      case 'Sosial':
-        icon = <SocialIcon />;
-      default:
-        break;
+    function icon(type: string): React.ReactNode {
+      switch (type) {
+        case 'Logg inn':
+          return <LoginIcon />;
+        case 'Registrer':
+          return <RegisterIcon />;
+        case 'Sosial':
+          return <SocialIcon />;
+        default:
+          break;
+      }
     }
+
     return (
       <div className="flex items-center space-x-2">
-        {icon}
+        {icon(type)}
         <span>{type}</span>
       </div>
     );
