@@ -6,7 +6,7 @@ import {
   useDisclosure
 } from '@nextui-org/react';
 import { useRouter, usePathname } from 'next/navigation';
-import CorbadoLogin, { Modes } from './auth-corbado';
+import AuthOptions, { Modes } from './auth-options';
 
 export default function AuthModal(props: { mode: Modes }) {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
@@ -24,13 +24,12 @@ export default function AuthModal(props: { mode: Modes }) {
       backdrop="blur"
       onOpenChange={onOpenChange}
       onClose={closeModal}
-      size="lg"
     >
       <ModalContent>
         {(onClose) => (
           <>
-            <ModalBody className="grid justify-center">
-              <CorbadoLogin mode={props.mode} />
+            <ModalBody className="grid justify-center mx-4">
+              <AuthOptions mode={props.mode} />
             </ModalBody>
           </>
         )}

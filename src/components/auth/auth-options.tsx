@@ -7,13 +7,17 @@ import { useRouter, usePathname } from 'next/navigation';
 import { Tabs, Tab, Card, CardBody } from '@nextui-org/react';
 import React, { Key } from 'react';
 import { signIn } from 'next-auth/react';
-import LoginOptions from './login-options';
+import AuthSocial from './auth-social';
+import { useTheme } from 'next-themes';
+
+import './auth-theme.css';
 
 export type Modes = 'login' | 'register';
 
-export default function CorbadoLogin(props: { mode: Modes }) {
+export default function AuthOptions(props: { mode: Modes }) {
   const router = useRouter();
   const path = usePathname();
+  const { theme, setTheme } = useTheme();
 
   const [selected, setSelected] = React.useState(props.mode);
 
@@ -28,8 +32,9 @@ export default function CorbadoLogin(props: { mode: Modes }) {
     <div className="grid justify-center">
       <CorbadoProvider
         projectId={process.env.NEXT_PUBLIC_CORBADO_PROJECT_ID}
-        darkMode="off"
+        darkMode={theme === 'dark' ? 'on' : 'off'}
         customTranslations={corbadoTranslations}
+        theme="custom"
       >
         <Tabs
           aria-label="Options"
@@ -46,7 +51,7 @@ export default function CorbadoLogin(props: { mode: Modes }) {
           <Tab key="social" title="Sosial">
             <Card>
               <CardBody>
-                <LoginOptions />
+                <AuthSocial />
               </CardBody>
             </Card>
           </Tab>

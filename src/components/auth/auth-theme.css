@@ -1,0 +1,12 @@
+.custom .cb-container {
+  background-color: transparent;
+  color: var(--color-black);
+  border: none;
+  width: 25rem;
+  box-shadow: none;
+}
+
+.custom .cb-input,
+.custom .cb-button-primary {
+  border-radius: 0.5rem;
+}

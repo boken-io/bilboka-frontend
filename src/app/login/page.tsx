@@ -1,12 +1,11 @@
 'use client';
 
-import AuthCorbado from '@/components/auth/auth-corbado';
-import LoginOptions from '@/components/auth/login-options';
+import AuthOptions from '@/components/auth/auth-options';
 
 export default function LoginPage() {
   return (
     <div className="mt-5">
-      <AuthCorbado mode="login" />
+      <AuthOptions mode="login" />
     </div>
   );
 }

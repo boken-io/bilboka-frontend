@@ -13,7 +13,7 @@ const disabled = {
   opacity: '0.3'
 };
 
-export default function LoginOptions() {
+export default function AuthSocial() {
   const pathname = usePathname();
 
   function login(provider: string) {
