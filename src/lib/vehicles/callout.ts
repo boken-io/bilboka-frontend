@@ -36,7 +36,7 @@ async function doCallout(resource: Resource, vehicleId?: string, user?: User) {
     }
     if (response.status === 401) {
       if (resource == Resource.Vehicles) {
-        throw new Error('No cars');
+        return response;
       } else {
         throw new Error(`vehicle #${vehicleId}`);
       }
