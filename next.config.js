@@ -25,10 +25,6 @@ module.exports = withPWA({
       {
         protocol: 'https',
         hostname: 'platform-lookaside.fbsbx.com'
-      },
-      {
-        protocol: 'https',
-        hostname: 'avatar.vercel.sh'
       }
     ]
   }
