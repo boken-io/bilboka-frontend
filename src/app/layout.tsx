@@ -42,16 +42,18 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full" suppressHydrationWarning>
       <head>
-        {siteConfig.resolutions.map((item, index) => (
-          <link
-            key={index}
-            rel="apple-touch-startup-image"
-            media={`screen and (device-width: ${item.width}px) and (device-height: ${item.height}px) and (-webkit-device-pixel-ratio: ${item.ratio}) and (orientation: ${item.orientation})`}
-            href={`/media/${item.width * item.ratio}/${
-              item.height * item.ratio
-            }/apple-icon`}
-          />
-        ))}
+        {['portrait', 'landscape'].map((orientation) =>
+          siteConfig.resolutions.map((device, index) => (
+            <link
+              key={index}
+              rel="apple-touch-startup-image"
+              media={`screen and (device-width: ${device.width}px) and (device-height: ${device.height}px) and (-webkit-device-pixel-ratio: ${device.ratio}) and (orientation: ${orientation})`}
+              href={`/media/${device.width * device.ratio}/${
+                device.height * device.ratio
+              }/apple-icon`}
+            />
+          ))
+        )}
       </head>
       <body
         className={clsx(

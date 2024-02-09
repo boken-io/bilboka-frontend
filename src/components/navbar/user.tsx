@@ -25,7 +25,6 @@ export default function User({ user }: { user: any }) {
               </div>
               <div className="place-self-end">
                 <span className="sr-only">Open user menu</span>
-                {/* TODO: bytt ut default pic */}
                 <Image
                   className="h-8 w-8 rounded-full"
                   src={user?.image || '/auth/user.png'}
