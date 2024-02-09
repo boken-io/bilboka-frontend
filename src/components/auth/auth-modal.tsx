@@ -21,7 +21,10 @@ export default function AuthModal(props: { mode: Modes }) {
     <Modal
       isOpen={true}
       placement="center"
+      radius="sm"
       backdrop="blur"
+      isKeyboardDismissDisabled={true}
+      isDismissable={false}
       onOpenChange={onOpenChange}
       onClose={closeModal}
     >
