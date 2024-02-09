@@ -28,7 +28,7 @@ export default function AuthModal(props: { mode: Modes }) {
       <ModalContent>
         {(onClose) => (
           <>
-            <ModalBody className="grid justify-center mx-4">
+            <ModalBody>
               <AuthOptions mode={props.mode} />
             </ModalBody>
           </>

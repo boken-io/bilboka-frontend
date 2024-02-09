@@ -10,13 +10,21 @@ const corbadoTranslations = {
           textField_name: 'Fullt navn',
           textField_email: 'E-postadresse'
         },
+        emailOtp: {
+          header: 'Skriv engangspassord for å opprette bruker',
+          body_text1: 'Du skal ha mottatt en e-post på ',
+          body_text2: '.',
+          button_verify: 'Fullfør',
+          button_sendOtpAgain: 'Send engangspassord på nytt',
+          button_back: 'Avbryt'
+        },
         passkeyCreate: {
           header: 'Sett opp Passkeys',
           headerButton_showPasskeyBenefits: '',
           body: 'Kontoen knyttes til ',
           button_start: 'Lag Passkey',
           button_switchToAlternate: {
-            emailOtp: 'Send meg kjedelig engangspassord på mail',
+            emailOtp: 'Send engangspassord på mail',
             emailLink: 'Send email magic link'
           },
           button_back: 'Tilbake'
@@ -31,6 +39,38 @@ const corbadoTranslations = {
           },
           body_text3: '',
           button: 'Fortsett'
+        },
+        passkeyBenefits: {
+          header: 'Passkeys',
+          body_introduction:
+            'Med Passkeys trenger du ikke huske passord lengre fordi du logger inn med ',
+          body_loginMethods: 'Face ID, Touch ID eller telefonkoden din.',
+          button_start: 'Aktiver',
+          button_skip: 'Kanskje senere'
+        },
+        passkeyError: {
+          header: 'Oops',
+          body_errorMessage: 'Opprett av Passkeys feilet. ',
+          button_showPasskeyBenefits: '',
+          body_tryAgainMessage: {
+            emailOtp:
+              'Prøv igjen, eller avbryt. Du kan fortsatt logge inn med engangspassord.',
+            emailLink:
+              'Prøv igjen, eller avbryt. Du kan fortsatt logge inn med innlogginslenke.'
+          },
+          button_switchToAlternate: {
+            emailOtp: 'Send engangspassord på mail',
+            emailLink: 'Send innlogginslenke på mail'
+          },
+          button_retry: 'Prøv igjen',
+          button_back: 'Tilbake',
+          button_cancel: 'Fullfør registrering uten Passkeys'
+        },
+        passkeyAppend: {
+          header: 'Logg inn raskere med Passkeys',
+          button_showPasskeyBenefits: '',
+          button_start: 'Aktiver',
+          button_skip: 'Kanskje senere'
         }
       },
       login: {
@@ -50,7 +90,9 @@ const corbadoTranslations = {
         passkeyAlreadyExists: 'Passkey for this device already exists',
         unknownUser: 'Fant ingen bruker med denne e-postadressen',
         invalidOtp: 'Koden er feil',
-        unknownError: 'Noe gikk galt, vennligst prøv igjen'
+        unknownError: 'Noe gikk galt, vennligst prøv igjen',
+        conditionalUiUnconfirmedCredential:
+          'Du har ikke bekreftet din e-postadresse enda.'
       }
     }
   }

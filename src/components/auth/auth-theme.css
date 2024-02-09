@@ -1,5 +1,6 @@
 .custom .cb-container {
   background-color: transparent;
+  padding: 0;
   color: var(--color-black);
   border: none;
   width: 25rem;
@@ -7,6 +8,27 @@
 }
 
 .custom .cb-input,
-.custom .cb-button-primary {
+.custom .cb-button-primary,
+.custom .cb-button-secondary {
   border-radius: 0.5rem;
+}
+
+.custom .cb-button-primary {
+  background-image: linear-gradient(
+    to right top,
+    #051937,
+    #004d7a,
+    #008793,
+    #00bf72,
+    #a8eb12
+  );
+}
+
+.custom .cb-subheader,
+.custom .cb-email-links {
+  display: none;
+}
+
+.custom .cb-form {
+  margin: 0;
 }

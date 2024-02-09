@@ -3,22 +3,21 @@
 import corbadoTranslations from '@/config/corbado-translations';
 import { Login, SignUp } from '@corbado/react';
 import { CorbadoProvider } from '@corbado/react';
-import { useRouter, usePathname } from 'next/navigation';
-import { Tabs, Tab, Card, CardBody } from '@nextui-org/react';
+import { usePathname } from 'next/navigation';
+import { Tabs, Tab } from '@nextui-org/react';
 import React, { Key } from 'react';
 import { signIn } from 'next-auth/react';
 import AuthSocial from './auth-social';
 import { useTheme } from 'next-themes';
 
 import './auth-theme.css';
+import { LoginIcon, RegisterIcon, SocialIcon } from '../icons/icons';
 
 export type Modes = 'login' | 'register';
 
 export default function AuthOptions(props: { mode: Modes }) {
-  const router = useRouter();
   const path = usePathname();
-  const { theme, setTheme } = useTheme();
-
+  const { theme } = useTheme();
   const [selected, setSelected] = React.useState(props.mode);
 
   function closeModal() {
@@ -28,8 +27,28 @@ export default function AuthOptions(props: { mode: Modes }) {
     });
   }
 
+  function title(type: string): React.ReactNode {
+    let icon;
+    switch (type) {
+      case 'Logg inn':
+        icon = <LoginIcon />;
+      case 'Registrer':
+        icon = <RegisterIcon />;
+      case 'Sosial':
+        icon = <SocialIcon />;
+      default:
+        break;
+    }
+    return (
+      <div className="flex items-center space-x-2">
+        {icon}
+        <span>{type}</span>
+      </div>
+    );
+  }
+
   return (
-    <div className="grid justify-center">
+    <div className="justify-center">
       <CorbadoProvider
         projectId={process.env.NEXT_PUBLIC_CORBADO_PROJECT_ID}
         darkMode={theme === 'dark' ? 'on' : 'off'}
@@ -38,22 +57,50 @@ export default function AuthOptions(props: { mode: Modes }) {
       >
         <Tabs
           aria-label="Options"
-          className="justify-center mt-4"
+          color="primary"
+          variant="underlined"
           selectedKey={selected}
           onSelectionChange={setSelected as (key: Key) => void}
+          fullWidth={true}
+          classNames={{
+            tabList:
+              'gap-6 w-full relative rounded-none p-0 border-b border-divider justify-center',
+            cursor: 'w-full bg-[#4ca782]',
+            tab: 'max-w-fit px-0 h-12',
+            tabContent: 'group-data-[selected=true]:text-[#4ca782]'
+          }}
         >
-          <Tab key="login" title="Logg inn">
-            <Login onLoggedIn={closeModal} />
+          {/* ------------------------------------------------------------------------- */
+          /*                                     tab                                    */
+          /* -------------------------------------------------------------------------- */}
+          <Tab key="login" title={title('Logg inn')}>
+            {/* ----------------------------- tab content ----------------------------- */}
+            <div className="min-h-72 grid place-content-center">
+              <Login onLoggedIn={closeModal} />
+            </div>
           </Tab>
-          <Tab key="register" title="Registrer">
-            <SignUp onSignedUp={closeModal} />
+          {/* ------------------------------------------------------------------------- */
+          /*                                     tab                                    */
+          /* -------------------------------------------------------------------------- */}
+          <Tab key="register" title={title('Registrer')}>
+            {/* ----------------------------- tab content ----------------------------- */}
+            <div className="min-h-72 grid place-content-center">
+              <SignUp onSignedUp={closeModal} />
+            </div>
           </Tab>
-          <Tab key="social" title="Sosial">
-            <Card>
-              <CardBody>
+          {/* ------------------------------------------------------------------------- */
+          /*                                     tab                                    */
+          /* -------------------------------------------------------------------------- */}
+          <Tab key="social" title={title('Sosial')}>
+            {/* ----------------------------- tab content ----------------------------- */}
+            <div className="min-h-72 grid place-content-center">
+              <span className="text-center text-3xl self-center pb-10">
+                Logg inn
+              </span>
+              <span className="self-end">
                 <AuthSocial />
-              </CardBody>
-            </Card>
+              </span>
+            </div>
           </Tab>
         </Tabs>
       </CorbadoProvider>
