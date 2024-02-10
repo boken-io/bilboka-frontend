@@ -2,11 +2,12 @@ import CheckIfAuthenticated from '@/lib/auth/check-auth';
 import { Get, Resource } from '@/lib/vehicles/callout';
 
 import { Vehicle } from '@/lib/vehicles/model';
-import Info from '@/components/vehicles/info';
-import Chart from '@/components/vehicles/chart';
-import Entries from '@/components/vehicles/entries';
+import Info from '@/components/vehicles/cards/info';
+import Chart from '@/components/vehicles/cards/chart';
+import Entries from '@/components/vehicles/cards/entries';
 import BilskiltPage from '@/components/vehicles/vehicles-components/bilskilt/bilskilt';
 import RegisterFuelButton from '@/components/vehicles/vehicles-components/register-fuel/register-fuel-button';
+import Odometer from '@/components/vehicles/cards/odometer';
 
 export default async function Page({
   params,
@@ -31,7 +32,9 @@ export default async function Page({
         <div className="col-span-2">
           <Chart></Chart>
         </div>
-        <Entries vehicleId={params.vehicle} user={user}></Entries>
+        <div className="col-span-3">
+          <Odometer vehicleId={params.vehicle} user={user} />
+        </div>
       </div>
     </main>
   );

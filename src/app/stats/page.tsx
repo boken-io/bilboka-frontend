@@ -1,7 +1,7 @@
 'use client';
 
 import { Card, Metric, Text, Title, BarList, Flex, Grid } from '@tremor/react';
-import Chart from '@/components/vehicles/chart';
+import Chart from '@/components/vehicles/cards/chart';
 
 const website = [
   { name: '/home', value: 1230 },
