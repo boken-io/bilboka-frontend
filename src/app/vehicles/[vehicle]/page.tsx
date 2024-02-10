@@ -1,20 +1,17 @@
 import CheckIfAuthenticated from '@/lib/auth/check-auth';
 import { Get, Resource } from '@/lib/vehicles/callout';
 
-import { Vehicle } from '@/lib/vehicles/model';
+import { Vehicle, Entries } from '@/lib/vehicles/model';
 import Info from '@/components/vehicles/cards/info';
 import Chart from '@/components/vehicles/cards/chart';
-import Entries from '@/components/vehicles/cards/entries';
 import BilskiltPage from '@/components/vehicles/vehicles-components/bilskilt/bilskilt';
 import RegisterFuelButton from '@/components/vehicles/vehicles-components/register-fuel/register-fuel-button';
-import Odometer from '@/components/vehicles/cards/odometer';
+import OdometerStats from '@/components/vehicles/cards/odometer-stats';
 
 export default async function Page({
-  params,
-  searchParams
+  params
 }: {
   params: { vehicle: string };
-  searchParams: { modal: string };
 }) {
   const user = await CheckIfAuthenticated();
 
@@ -23,6 +20,8 @@ export default async function Page({
     user,
     params.vehicle
   )) as Vehicle;
+
+  const entries = (await Get(Resource.Entries, user, vehicle.id)) as Entries;
 
   return (
     <main className="p-4 md:p-10 mx-auto max-w-7xl">
@@ -33,7 +32,7 @@ export default async function Page({
           <Chart></Chart>
         </div>
         <div className="col-span-3">
-          <Odometer vehicleId={params.vehicle} user={user} />
+          <OdometerStats entries={entries} />
         </div>
       </div>
     </main>

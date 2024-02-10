@@ -9,15 +9,11 @@ type EntryChart = {
   Kilometerstand: number;
 };
 
-export default async function Entries({
-  vehicleId,
-  user
+export default async function CurrentOdometer({
+  entries
 }: {
-  vehicleId: string;
-  user?: User;
+  entries: Entries;
 }) {
-  const entries = (await Get(Resource.Entries, user, vehicleId)) as Entries;
-
   let entryMap = new Map<string, EntryChart>();
   entries.forEach((entry) => {
     const { dateTime, odometer } = entry;
