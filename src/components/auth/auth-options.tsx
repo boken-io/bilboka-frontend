@@ -4,7 +4,7 @@ import corbadoTranslations from '@/config/corbado-translations';
 import { Login, SignUp } from '@corbado/react';
 import { CorbadoProvider } from '@corbado/react';
 import { usePathname } from 'next/navigation';
-import { Tabs, Tab } from "@heroui/react";
+import { Tabs, Tab } from '@heroui/react';
 import React, { Key } from 'react';
 import { signIn } from 'next-auth/react';
 import AuthSocial from './auth-social';
@@ -15,7 +15,14 @@ import { LoginIcon, RegisterIcon, SocialIcon } from '@/components/icons/icons';
 
 export type Modes = 'login' | 'register';
 
-export default function AuthOptions(props: { mode: Modes }) {
+export default function AuthOptions(
+  props: { mode: Modes },
+  {
+    children
+  }: {
+    children: React.ReactNode;
+  }
+) {
   const path = usePathname();
   const { theme } = useTheme();
   const [selected, setSelected] = React.useState(props.mode);
