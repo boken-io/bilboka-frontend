@@ -57,6 +57,7 @@
     "trailingComma": "none"
   },
   "devDependencies": {
+    "@corbado/types": "^3.0.0",
     "@types/node": "^22.13.10",
     "mini-css-extract-plugin": "^2.9.2",
     "webpack": "^5.98.0"
