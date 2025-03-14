@@ -15,14 +15,7 @@ import { LoginIcon, RegisterIcon, SocialIcon } from '@/components/icons/icons';
 
 export type Modes = 'login' | 'register';
 
-export default function AuthOptions(
-  props: { mode: Modes },
-  {
-    children
-  }: {
-    children: React.ReactNode;
-  }
-) {
+export default function AuthOptions(props: { mode: Modes }) {
   const path = usePathname();
   const { theme } = useTheme();
   const [selected, setSelected] = React.useState(props.mode);
