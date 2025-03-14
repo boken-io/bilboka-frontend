@@ -1,4 +1,4 @@
-import { Entries } from '@/lib/vehicles/model';
+import type { Entries } from '@/lib/vehicles/model';
 import { Get, Resource } from '@/lib/vehicles/callout';
 import { User } from 'next-auth';
 import { Card, AreaChart, Title, Metric, Text } from '@tremor/react';
