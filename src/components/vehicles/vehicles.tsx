@@ -1,5 +1,5 @@
 import { Metric, Text } from '@tremor/react';
-import { Vehicle, Vehicles } from '@/lib/vehicles/model';
+import type { Vehicle, Vehicles } from '@/lib/vehicles/model';
 import { Get, Resource } from '@/lib/vehicles/callout';
 import { User } from 'next-auth';
 import VehiclePreview from './vehicles-components/vehicle-preview/vehicle-preview';
