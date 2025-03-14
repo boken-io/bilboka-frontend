@@ -4,7 +4,7 @@ import corbadoTranslations from '@/config/corbado-translations';
 import { Login, SignUp } from '@corbado/react';
 import { CorbadoProvider } from '@corbado/react';
 import { usePathname } from 'next/navigation';
-import { Tabs, Tab } from '@nextui-org/react';
+import { Tabs, Tab } from "@heroui/react";
 import React, { Key } from 'react';
 import { signIn } from 'next-auth/react';
 import AuthSocial from './auth-social';

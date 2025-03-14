@@ -4,7 +4,7 @@ import {
   ModalContent,
   ModalBody,
   useDisclosure
-} from '@nextui-org/react';
+} from "@heroui/react";
 import { useRouter, usePathname } from 'next/navigation';
 import AuthOptions, { Modes } from './auth-options';
 
