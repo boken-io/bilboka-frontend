@@ -52,7 +52,7 @@ export default function AuthOptions(props: { mode: Modes }) {
   return (
     <div className="justify-center">
       <CorbadoProvider
-        projectId={process.env.NEXT_PUBLIC_CORBADO_PROJECT_ID}
+        projectId={process.env.NEXT_PUBLIC_CORBADO_PROJECT_ID || 'fallback'}
         darkMode={theme === 'dark' ? 'on' : 'off'}
         customTranslations={corbadoTranslations}
         theme="custom"
