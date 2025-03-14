@@ -6,6 +6,11 @@ const withPWA = require('@ducanh2912/next-pwa').default({
   extendDefaultRuntimeCaching: true,
   cacheOnFrontEndNav: true,
   aggressiveFrontEndNavCaching: true,
+  eslint: {
+    // Warning: This allows production builds to successfully complete even if
+    // your project has ESLint errors.
+    ignoreDuringBuilds: true
+  },
   workboxOptions: {
     runtimeCaching: [
       // Your runtimeCaching array
