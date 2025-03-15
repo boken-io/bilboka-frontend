@@ -22,7 +22,7 @@ async function Get(
 }
 
 async function doCallout(resource: Resource, vehicleId?: string, user?: User) {
-  const response = await fetch(GetUrl(resource, vehicleId), {
+  const response = await fetch(GetUrl(resource, vehicleId) as string, {
     method: 'GET',
     headers: {
       'content-type': 'application/json;charset=UTF-8',
@@ -48,10 +48,7 @@ async function doCallout(resource: Resource, vehicleId?: string, user?: User) {
   return response;
 }
 
-function GetUrl(
-  resource: Resource,
-  vehicleId: string | undefined
-): import('undici-types').RequestInfo {
+function GetUrl(resource: Resource, vehicleId: string | undefined): string {
   return `${GetDomain()}/${GetPath(resource, vehicleId)}/${UseSample()}`;
 }
 
